@@ -7,8 +7,8 @@ import Link from 'next/link';
 const TopNav = () => {
     return (
         <div className="bg-[#323232] p-5">
-            <nav className='container flex justify-between items-center'>
-                <ul className="text-white flex text-2xl gap-5">
+            <nav className='container flex justify-center md:justify-between items-center'>
+                <ul className="text-white hidden md:flex text-2xl gap-5">
                     <li>
                         <a target='_blank' href=""><FaFacebook /></a>
                     </li>
@@ -22,7 +22,7 @@ const TopNav = () => {
                         <Image priority width={170} src={logo} alt='Logo image'/>
                     </Link>
                 </div>
-                <div className="flex text-white gap-5">
+                <div className="hidden md:flex text-white gap-5">
                     <p>{moment().format("MM MMM YYYY")}</p>
                     <p><FaEnvelope className='inline mr-1'/> hello@support.com</p>
                 </div>

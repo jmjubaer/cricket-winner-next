@@ -6,3 +6,17 @@
 .container{
     @apply w-[1136px] mx-auto max-w-[96%]
 }
+
+.primary_btn{
+    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium
+}
+.primary_btn-rounded{
+    @apply px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium
+}
+.active{
+    @apply text-[#323232] border-b-2 border-[#FFC305] font-bold
+}
+
+.link{
+    @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
+}
