@@ -42,7 +42,10 @@ const NewsSection = () => {
                     {/* Slider area */}
                     <Swiper
                         navigation={true}
-                        autoplay={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false
+						}}
                         pagination={true}
                         modules={[Navigation, Pagination, Autoplay]}
                         className="mySwiper mt-5"
