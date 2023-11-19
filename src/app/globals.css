@@ -8,7 +8,7 @@
 }
 
 .primary_btn{
-    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium
+    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium hover:bg-[#323232] text-[#646464] hover:text-white 
 }
 .primary_btn-rounded{
     @apply px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium
@@ -19,4 +19,34 @@
 
 .link{
     @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
+}
+
+/* .react-tabs__tab-list{
+    border-bottom: none !important;
+    border-bottom: 2px solid #FFC305 !important;
+}
+
+.react-tabs__tab{
+    border: none !important;
+    border-bottom: 2px solid #323232 !important;
+}
+.react-tabs__tab--selected{
+    
+    
+    background: transparent !important;
+} */
+
+/* .react-tabs__tab--selected {
+	border-color: #465af7 !important;
+	@apply border-b-4 outline-none;
+}
+.subtab .react-tabs ul {
+	margin-top: 0px !important;
+	margin-bottom: 10px !important;
+} */
+
+.react-tabs__tab--selected {
+    background: transparent !important;
+    border-color: #FFC305 !important;
+    border-bottom: 2px solid #FFC305 !important;
 }
