@@ -2,7 +2,7 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination,Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -57,6 +57,38 @@ const Match = () => {
             startingTime:
                 "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
         },
+        {
+            MatchTitle: "Asia cup (Final)",
+            status: "Live",
+            team: {
+                team_1: {
+                    teamName: "india",
+                    flag: "https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo=",
+                },
+                team_2: {
+                    teamName: "Pakistan",
+                    flag: "https://media.istockphoto.com/id/652750800/vector/pakistan.jpg?s=612x612&w=0&k=20&c=x14F0XneN74dfVp2qL_vfT8JCZaHRB8ZKUIsrf0lqGY=",
+                },
+            },
+            startingTime:
+                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
+        },
+        {
+            MatchTitle: "Asia cup (Final)",
+            status: "Live",
+            team: {
+                team_1: {
+                    teamName: "india",
+                    flag: "https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo=",
+                },
+                team_2: {
+                    teamName: "Pakistan",
+                    flag: "https://media.istockphoto.com/id/652750800/vector/pakistan.jpg?s=612x612&w=0&k=20&c=x14F0XneN74dfVp2qL_vfT8JCZaHRB8ZKUIsrf0lqGY=",
+                },
+            },
+            startingTime:
+                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
+        }
     ];
     return (
         <div className="container mt-5">
@@ -79,24 +111,26 @@ const Match = () => {
                     <Swiper
                         // slidesPerView={1}
                         breakpoints={{
-                            740: {
+                            540: {
+                                slidesPerView: 2,
+                                spaceBetween: 10,
+                            },
+                            790: {
                                 slidesPerView: 3,
                                 spaceBetween: 20,
                             },
-                            790: {
+                            1220: {
                                 slidesPerView: 4,
                                 spaceBetween: 20,
                             },
-                        }}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
+                            1440: {
+                                slidesPerView: 5,
+                                spaceBetween: 30,
+                            },
                         }}
                         spaceBetween={30}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Pagination, Autoplay]}
+                        navigation={true}
+                        modules={[Navigation]}
                         className="mySwiper mt-5"
                     >
                         {match.map((single, idx) => (

@@ -21,32 +21,25 @@
     @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
 }
 
-/* .react-tabs__tab-list{
-    border-bottom: none !important;
-    border-bottom: 2px solid #FFC305 !important;
-}
 
-.react-tabs__tab{
-    border: none !important;
-    border-bottom: 2px solid #323232 !important;
-}
-.react-tabs__tab--selected{
-    
-    
-    background: transparent !important;
-} */
-
-/* .react-tabs__tab--selected {
-	border-color: #465af7 !important;
-	@apply border-b-4 outline-none;
-}
-.subtab .react-tabs ul {
-	margin-top: 0px !important;
-	margin-bottom: 10px !important;
-} */
-
+/* Match section */
 .react-tabs__tab--selected {
     background: transparent !important;
     border-color: #FFC305 !important;
     border-bottom: 2px solid #FFC305 !important;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+}
+
+/* Slider Css */
+.swiper-pagination-bullet{
+    background: #D9D9D9 !important;
+}
+.swiper-pagination-bullet-active{
+    background: #D9D9D9 !important;
+    width: 15px !important;
+    border-radius: 21px !important;
 }
