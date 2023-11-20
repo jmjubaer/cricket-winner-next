@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -34,6 +34,14 @@ const NewsSection = () => {
             title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
             description: "",
         },
+        {
+            country: "Australia",
+            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
+            timestamp:
+                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
+            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
+            description: "",
+        },
     ];
     return (
         <div className="container">
@@ -41,13 +49,12 @@ const NewsSection = () => {
                 <div className="col-span-12 md:col-span-8">
                     {/* Slider area */}
                     <Swiper
-                        navigation={true}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
                         }}
                         pagination={true}
-                        modules={[Navigation, Pagination, Autoplay]}
+                        modules={[ Pagination, Autoplay]}
                         className="mySwiper mt-5"
                     >
                         {newsCollection?.slice(0, 3)?.map((news, idx) => (
@@ -88,7 +95,7 @@ const NewsSection = () => {
                     </Swiper>
 
                     {/* Latest News */}
-                    <div className="">
+                    <div className="overflow-hidden">
                         <h2 className="font-medium text-2xl my-5">
                             Latest News
                         </h2>
@@ -107,7 +114,7 @@ const NewsSection = () => {
                             spaceBetween={30}
                             navigation={true}
                             modules={[Navigation]}
-                            className="mySwiper mt-5"
+                            className="newsSlider mt-5"
                         >
                             {newsCollection.map((news, idx) => (
                                 <SwiperSlide key={idx}>

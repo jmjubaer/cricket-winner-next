@@ -1,5 +1,6 @@
 "use client"
 import Announce from '@/Page/Home/Announce'
+import MainContent from '@/Page/Home/MainContent'
 import Match from '@/Page/Home/Match'
 import NewsSection from '@/Page/Home/NewsSection'
 import TrendingNews from '@/Page/Home/TrendingNews'
@@ -11,6 +12,7 @@ export default function Home() {
           <NewsSection></NewsSection>
           <TrendingNews></TrendingNews>
           <Announce></Announce>
+          {/* <MainContent></MainContent> */}
         </>
   )
 }

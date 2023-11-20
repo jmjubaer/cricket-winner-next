@@ -21,6 +21,14 @@
     @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
 }
 
+.swiper-button-prev, .swiper-button-next {
+    align-items: center !important;
+    justify-items: center !important;
+    border: 2px solid #D8D8D8 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+}
 
 /* Match section */
 .react-tabs__tab--selected {
@@ -29,12 +37,50 @@
     border-bottom: 2px solid #FFC305 !important;
 }
 
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
-    left: var(--swiper-navigation-sides-offset, 10px);
-    right: auto;
+.matchSwiper{
+    overflow: visible !important;
 }
 
-/* Slider Css */
+.matchSwiper .swiper-button-prev, .matchSwiper .swiper-button-next {
+    top: -40px !important;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+
+
+}
+
+.matchSwiper .swiper-button-prev{
+    right: 300px !important;
+    left: auto !important;
+}
+.matchSwiper .swiper-button-next{
+    right: 230px !important;
+    left: auto !important;
+}
+
+
+/*================== News slider ==================*/
+
+.newsSlider{
+    overflow: visible !important;
+}
+.newsSlider .swiper-button-prev, .newsSlider .swiper-button-next {
+    top: -35px !important;
+}
+.newsSlider .swiper-button-prev{
+    right: 80px !important;
+    left: auto !important;
+}
+.newsSlider .swiper-button-next{
+    right: 20px !important;
+    left: auto !important;
+}
+
+/* =============Slider Cs==================== */
 .swiper-pagination-bullet{
     background: #D9D9D9 !important;
 }

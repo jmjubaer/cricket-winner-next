@@ -131,7 +131,7 @@ const Match = () => {
                         spaceBetween={30}
                         navigation={true}
                         modules={[Navigation]}
-                        className="mySwiper mt-5"
+                        className="matchSwiper mt-5"
                     >
                         {match.map((single, idx) => (
                             <SwiperSlide key={idx}>

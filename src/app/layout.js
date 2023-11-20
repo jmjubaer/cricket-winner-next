@@ -1,7 +1,8 @@
 import { Onest } from "next/font/google";
 import "./globals.css";
-import TopNav from "@/Page/Home/TopNav";
-import MainNav from "@/Page/Home/MainNav";
+import TopNav from "@/Page/Shered/TopNav";
+import MainNav from "@/Page/Shered/MainNav";
+import Footer from "@/Page/Shered/Footer";
 
 const onest = Onest({
     subsets: ["latin"],
@@ -25,6 +26,9 @@ export default function RootLayout({ children }) {
                 <main className="bg-[#FBFBFB] min-h-[calc(100vh-150px)]">
                   {children}
                 </main>
+                <footer className="bg-black text-white">
+                    <Footer></Footer>
+                </footer>
             </body>
         </html>
     );

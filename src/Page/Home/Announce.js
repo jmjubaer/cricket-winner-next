@@ -4,10 +4,10 @@ import { RiFileList2Fill } from "react-icons/ri";
 
 const Announce = () => {
     return (
-        <div className="bg-[#323232] py-16">
+        <div className="bg-[#323232] py-16 mt-5">
             <div className="container text-white text-center">
                 <span className="text-5xl font-bold">“</span>
-                <h2 className="text-3xl font-bold my-[10px]">It is not my job to announce the winner</h2>
+                <h2 className="text-xl md:text-3xl font-bold my-[10px]">It is not my job to announce the winner</h2>
                 <p>
                     <b>Rohit Sharma</b> on being asked if England were rightly
                     awarded the World Cup title in 2019
