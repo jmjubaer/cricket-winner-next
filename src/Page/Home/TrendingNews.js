@@ -86,8 +86,8 @@ const TrendingNews = () => {
 
             <div className="mt-5 col-span-3 lg:col-span-1">
                 <h2 className="text-2xl font-medium my-2">Featured News</h2>
-                {newsCollection?.map((news) => (
-                    <div className="flex gap-2 p-3">
+                {newsCollection?.map((news,idx) => (
+                    <div key={idx} className="flex gap-2 p-3">
                         <Image
                             width={250}
                             height={150}
