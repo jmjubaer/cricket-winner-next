@@ -35,9 +35,9 @@ const TrendingNews = () => {
         },
     ];
     return (
-        <div className="grid grid-cols-3 container">
-            {/* Slider area */}
-            <div className="col-span-2 mt-5">
+        <div className="grid sm:grid-cols-3 container">
+            {/* Slider area */} 
+            <div className="sm:col-span-3 lg:col-span-2 mt-5 hidden sm:block">
                 <h2 className="text-2xl font-medium my-2">Featured News</h2>
                 <Swiper
                     autoplay={{
@@ -55,7 +55,7 @@ const TrendingNews = () => {
                                     width={750}
                                     height={350}
                                     alt="image Image"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-[360px] object-cover"
                                     src={news?.image}
                                 />
 
@@ -83,18 +83,19 @@ const TrendingNews = () => {
                     ))}
                 </Swiper>
             </div>
-            <div className="mt-5">
+
+            <div className="mt-5 col-span-3 lg:col-span-1">
                 <h2 className="text-2xl font-medium my-2">Featured News</h2>
                 {newsCollection?.map((news) => (
-                    <div className="grid grid-cols-3 gap-2 p-3">
+                    <div className="flex gap-2 p-3">
                         <Image
                             width={250}
                             height={150}
                             alt="news Image"
-                            className="w-full h-28 object-cover rounded-xl"
+                            className="w-32 h-28 object-cover rounded-xl"
                             src={news?.image}
                         />
-                        <div className="col-span-2">
+                        <div className="">
                             <p className="text-[#969696]">
                                 <FaRegClock className="inline mr-2" />
                                 {moment(news?.timestamp).fromNow()}
@@ -104,6 +105,8 @@ const TrendingNews = () => {
                     </div>
                 ))}
             </div>
+
+            {/* ad Script */}
         </div>
     );
 };

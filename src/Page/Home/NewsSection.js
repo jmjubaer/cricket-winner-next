@@ -38,14 +38,14 @@ const NewsSection = () => {
     return (
         <div className="container">
             <div className="grid grid-cols-12">
-                <div className="col-span-8">
+                <div className="col-span-12 md:col-span-8">
                     {/* Slider area */}
                     <Swiper
                         navigation={true}
-						autoplay={{
-							delay: 2500,
-							disableOnInteraction: false
-						}}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
                         pagination={true}
                         modules={[Navigation, Pagination, Autoplay]}
                         className="mySwiper mt-5"
@@ -57,7 +57,7 @@ const NewsSection = () => {
                                         width={750}
                                         height={350}
                                         alt="image Image"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-[360px] object-cover"
                                         src={news?.image}
                                     />
 
@@ -66,7 +66,7 @@ const NewsSection = () => {
 
                                     {/* details */}
 
-                                    <div className="absolute bottom-0 left-0 w-full m-10">
+                                    <div className="absolute bottom-9 left-1/2 -translate-x-1/2 w-11/12">
                                         <div className="flex items-center gap-5">
                                             <p className="px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium w-fit">
                                                 {news?.country}
@@ -92,27 +92,47 @@ const NewsSection = () => {
                         <h2 className="font-medium text-2xl my-5">
                             Latest News
                         </h2>
-                        <div className="grid grid-cols-3 ">
-                            {newsCollection?.map((news) => (
-                                <div className="p-3">
-                                    <Image
-                                        width={250}
-                                        height={150}
-                                        alt="news Image"
-                                        className="w-full h-36 object-cover rounded-xl"
-                                        src={news?.image}
-                                    />
-                                    <p className="text-[#969696] my-3">
-                                        <FaRegClock className="inline mr-2" />
-                                        {moment(news?.timestamp).fromNow()}
-                                    </p>
-                                    <p className="font-bold text-sm">{news?.title}</p>
-                                </div>
+                        <Swiper
+                            // slidesPerView={1}
+                            breakpoints={{
+                                540: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                },
+                                1220: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 20,
+                                },
+                            }}
+                            spaceBetween={30}
+                            navigation={true}
+                            modules={[Navigation]}
+                            className="mySwiper mt-5"
+                        >
+                            {newsCollection.map((news, idx) => (
+                                <SwiperSlide key={idx}>
+                                    <div className="p-3 mx-auto">
+                                        <Image
+                                            width={250}
+                                            height={150}
+                                            alt="news Image"
+                                            className="w-full h-[147px] object-cover rounded-xl"
+                                            src={news?.image}
+                                        />
+                                        <p className="text-[#969696] my-3">
+                                            <FaRegClock className="inline mr-2" />
+                                            {moment(news?.timestamp).fromNow()}
+                                        </p>
+                                        <p className="font-bold text-sm">
+                                            {news?.title}
+                                        </p>
+                                    </div>
+                                </SwiperSlide>
                             ))}
-                        </div>
+                        </Swiper>
                     </div>
                 </div>
-                <div className="col-span-4">{/* Ad Script */}</div>
+                <div className="md:col-span-4">{/* Ad Script */}</div>
             </div>
 
             <div className="">{/* Ad Script */}</div>
