@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/*================= Common CSS=============== */
 
 .container{
     @apply w-[1136px] mx-auto max-w-[96%]
@@ -21,6 +22,9 @@
     @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
 }
 
+
+/* Match section */
+
 .swiper-button-prev, .swiper-button-next {
     align-items: center !important;
     justify-items: center !important;
@@ -29,9 +33,7 @@
     height: 44px !important;
     border-radius: 50% !important;
 }
-
-/* Match section */
-.react-tabs__tab--selected {
+.match_tab .react-tabs__tab--selected {
     background: transparent !important;
     border-color: #FFC305 !important;
     border-bottom: 2px solid #FFC305 !important;
@@ -80,7 +82,7 @@
     left: auto !important;
 }
 
-/* =============Slider Cs==================== */
+/* =============Slider Css==================== */
 .swiper-pagination-bullet{
     background: #D9D9D9 !important;
 }
@@ -88,4 +90,9 @@
     background: #D9D9D9 !important;
     width: 15px !important;
     border-radius: 21px !important;
+}
+
+/* =====================Main content ===================== */
+.content_tab .react-tabs__tab--selected,.content_tab .react-tabs__tab:hover {
+    @apply bg-[#FFC305] rounded-none
 }

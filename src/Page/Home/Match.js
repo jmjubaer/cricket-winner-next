@@ -97,7 +97,7 @@ const Match = () => {
                     <h2 className="text-2xl font-medium">
                         Cricket Match Predictions & Tips
                     </h2>
-                    <TabList className=" flex">
+                    <TabList className="flex match_tab">
                         <Tab className="border-0 border-b-2 cursor-pointer px-5 py-3 outline-none">
                             Today
                         </Tab>
