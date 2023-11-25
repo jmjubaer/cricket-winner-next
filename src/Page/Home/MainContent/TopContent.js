@@ -110,9 +110,9 @@ const TopContent = () => {
                         ))}
                     </div>
                     {/*=============== latest news ================= */}
-                    <div className="">
+                    <div className="mt-5">
                         <h2 className="text-2xl font-medium">Latest News</h2>
-                        <div className="">
+                        <div className="mt-5">
                             {newsCollection.map((news, idx) => (
                                 <div
                                     key={idx}
@@ -148,9 +148,9 @@ const TopContent = () => {
                         </div>
                     </div>
                     {/*=============== Cricket Analysis ================= */}
-                    <div className="">
+                    <div className="mt-5">
                         <h2 className="text-2xl font-medium">Cricket Analysis</h2>
-                        <div className="">
+                        <div className="mt-5">
                             {newsCollection.slice(0,2).map((news, idx) => (
                                 <div
                                     key={idx}
@@ -187,9 +187,9 @@ const TopContent = () => {
                     </div>
 
                     {/*=============== Cricket Stats ================= */}
-                    <div className="">
+                    <div className="mt-5">
                         <h2 className="text-2xl font-medium">Cricket Stats</h2>
-                        <div className="">
+                        <div className="mt-5">
                             {newsCollection.slice(0,2).map((news, idx) => (
                                 <div
                                     key={idx}
