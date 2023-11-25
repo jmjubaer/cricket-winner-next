@@ -64,7 +64,7 @@ const TrendingNews = () => {
 
                                 {/* details */}
 
-                                <div className="absolute bottom-0 left-0 w-full m-10">
+                                <div className="absolute bottom-9 left-1/2 -translate-x-1/2 w-11/12">
                                     <div className="flex items-center gap-5">
                                         <p className="px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium w-fit">
                                             {news?.country}

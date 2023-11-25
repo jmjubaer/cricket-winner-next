@@ -5,7 +5,7 @@
 /*================= Common CSS=============== */
 
 .container{
-    @apply w-[1136px] mx-auto max-w-[96%]
+    @apply w-[1136px] mx-auto max-w-[96%] overflow-hidden
 }
 
 .primary_btn{
