@@ -9,7 +9,7 @@
 }
 
 .primary_btn{
-    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium hover:bg-[#323232] text-[#646464] hover:text-white 
+    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium hover:bg-[#323232] text-[#323232] hover:text-white 
 }
 .primary_btn-rounded{
     @apply px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium
@@ -23,7 +23,7 @@
 }
 
 
-/* Match section */
+/*=============== Match section ===============*/
 
 .swiper-button-prev, .swiper-button-next {
     align-items: center !important;
@@ -83,6 +83,7 @@
 }
 
 /* =============Slider Css==================== */
+
 .swiper-pagination-bullet{
     background: #D9D9D9 !important;
 }
@@ -93,6 +94,17 @@
 }
 
 /* =====================Main content ===================== */
-.content_tab .react-tabs__tab--selected,.content_tab .react-tabs__tab:hover {
+.rounded_left{
+    border-bottom-left-radius: 500px !important;
+    border-top-left-radius: 500px !important;
+}
+.rounded_right{
+    border-bottom-right-radius: 500px !important;
+    border-top-right-radius: 500px !important;
+}
+.content_tab .react-tabs__tab--selected{
+    @apply bg-[#FFC305] rounded-none
+}
+.content_tab>:hover {
     @apply bg-[#FFC305] rounded-none
 }

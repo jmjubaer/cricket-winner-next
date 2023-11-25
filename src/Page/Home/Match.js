@@ -12,6 +12,7 @@ const Match = () => {
         {
             MatchTitle: "Asia cup (Final)",
             status: "Upcoming",
+            banner: "https://i.ibb.co/XFcr8rh/image-16.png",
             team: {
                 team_1: {
                     teamName: "india",
@@ -28,6 +29,7 @@ const Match = () => {
         {
             MatchTitle: "Asia cup (Final)",
             status: "Finished",
+            banner: "https://i.ibb.co/XFcr8rh/image-16.png",
             team: {
                 team_1: {
                     teamName: "Sri Lanka",
@@ -44,6 +46,7 @@ const Match = () => {
         {
             MatchTitle: "Asia cup (Final)",
             status: "Live",
+            banner: "https://i.ibb.co/XFcr8rh/image-16.png",
             team: {
                 team_1: {
                     teamName: "india",
@@ -60,6 +63,7 @@ const Match = () => {
         {
             MatchTitle: "Asia cup (Final)",
             status: "Live",
+            banner: "https://i.ibb.co/XFcr8rh/image-16.png",
             team: {
                 team_1: {
                     teamName: "india",
@@ -76,6 +80,7 @@ const Match = () => {
         {
             MatchTitle: "Asia cup (Final)",
             status: "Live",
+            banner: "https://i.ibb.co/XFcr8rh/image-16.png",
             team: {
                 team_1: {
                     teamName: "india",
