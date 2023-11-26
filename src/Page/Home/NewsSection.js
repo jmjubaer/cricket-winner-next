@@ -45,7 +45,7 @@ const NewsSection = () => {
     ];
     return (
         <div className="container">
-            <div className="grid grid-cols-12">
+            <div className="grid grid-cols-12 gap-5">
                 <div className="col-span-12 md:col-span-8">
                     {/* Slider area */}
                     <Swiper
@@ -54,7 +54,7 @@ const NewsSection = () => {
                             disableOnInteraction: false,
                         }}
                         pagination={true}
-                        modules={[ Pagination, Autoplay]}
+                        modules={[Pagination, Autoplay]}
                         className="mySwiper mt-5"
                     >
                         {newsCollection?.slice(0, 3)?.map((news, idx) => (
@@ -139,10 +139,23 @@ const NewsSection = () => {
                         </Swiper>
                     </div>
                 </div>
-                <div className="md:col-span-4">{/* Ad Script */}</div>
+                <div className="md:col-span-4">
+                    {" "}
+                    <div
+                        className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center  my-5`}
+                    >
+                        <p className="text-5xl text-black text-opacity-10">
+                            Ad Here
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div className="">{/* Ad Script */}</div>
+            <div
+                className={`bg-[#eeee]  rounded-lg w-full h-48 flex items-center justify-center mt-10`}
+            >
+                <p className="text-5xl text-black text-opacity-10">Ad Here</p>
+            </div>
         </div>
     );
 };

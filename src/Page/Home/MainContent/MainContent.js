@@ -106,25 +106,28 @@ const MainContent = () => {
     ];
     return (
         <section className="container grid grid-cols-12 gap-5">
+            {/* left content */}
             <div className="col-span-8 bg-white p-5 rounded-xl">
                 <TopContent></TopContent>
                 <WorldCupNews></WorldCupNews>
                 <LeagueNews></LeagueNews>
                 <TodayNews></TodayNews>
             </div>
+            {/* Right Content */}
             <div className="col-span-4 flex flex-col justify-between">
                 <Image src={Board} alt="Ad" className="w-full" />
                 <div
-                    className={`bg-[#eeee]  rounded-lg w-full h-[320px] flex items-center justify-center  my-5`}
+                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5`}
                 >
                     <p className="text-5xl text-black text-opacity-10">
                         Ad Here
                     </p>
                 </div>
+                
                 <Image src={Board} alt="Ad" className="w-full" />
 
                 {/* Suggest match */}
-                <div className="">
+                <div className="mt-5">
                     <h2 className="font-medium text-2xl text-[#323232]">Upcoming match</h2>
                     <Swiper
                         slidesPerView={1}
@@ -136,6 +139,13 @@ const MainContent = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                </div>
+                <div
+                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center  my-5`}
+                >
+                    <p className="text-5xl text-black text-opacity-10">
+                        Ad Here
+                    </p>
                 </div>
             </div>
         </section>
