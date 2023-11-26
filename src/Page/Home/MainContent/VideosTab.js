@@ -101,9 +101,9 @@ const VideosTab = () => {
                     {videosCollection.slice(1, 3).map((video, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-3 mt-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] gap-5"
                         >
-                            <div className="relative w-[245px] h-[170px]">
+                            <div className="relative">
                                 <Image
                                     width={245}
                                     height={168}
@@ -149,7 +149,7 @@ const VideosTab = () => {
                             key={idx}
                             className="grid grid-cols-3 mt-[10px] gap-5 "
                         >
-                            <div className="relative w-[245px] h-[170px]">
+                            <div className="relative">
                                 <Image
                                     width={245}
                                     height={168}

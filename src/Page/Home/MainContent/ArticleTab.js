@@ -12,7 +12,7 @@ const ArticleTab = () => {
                 "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
             title: "Waqar Younis praises Virat Kohli as a 'crazy man'. who will shatter records.",
             description:
-                "The Indian opener recently smashed a double hundred for Northamptonshire against Somerset in a one-day encounter, earning his moment after what has been a tough time...",
+                "The Indian opener recently smashed a double hundred for Northamptonshire against Somerset in a, earning his moment after what has been a tough time...",
             tournamentName: "Asia Cup",
         },
         {
@@ -59,7 +59,7 @@ const ArticleTab = () => {
                             width={750}
                             height={350}
                             alt="image Image"
-                            className="w-full h-[360px] object-cover"
+                            className="w-full h-full object-cover"
                             src={news?.image}
                         />
 
@@ -87,22 +87,22 @@ const ArticleTab = () => {
             </div>
             {/*=============== latest news ================= */}
             <div className="mt-5">
-                <h2 className="text-2xl font-medium">Latest News</h2>
+                <h2 className="text-2xl font-medium">latest news</h2>
                 <div className="mt-5">
                     {newsCollection.map((news, idx) => (
                         <div
                             key={idx}
-                            className="flex mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
                         >
                             <Image
                                 width={245}
                                 height={168}
                                 alt="image Image"
-                                className="w-[245px] h-[170px] object-cover rounded-xl"
+                                className="w-full h-full object-cover rounded-xl"
                                 src={news?.image}
                             />
 
-                            <div className="">
+                            <div className="col-span-2">
                                 <div className="flex items-center gap-5">
                                     <p className="text-[#969696]">
                                         <FaRegClock className="inline mr-2" />
@@ -129,17 +129,17 @@ const ArticleTab = () => {
                     {newsCollection.slice(0, 2).map((news, idx) => (
                         <div
                             key={idx}
-                            className="flex mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
                         >
                             <Image
                                 width={245}
                                 height={168}
                                 alt="image Image"
-                                className="w-[245px] h-[170px] object-cover rounded-xl"
+                                className="w-full h-full object-cover rounded-xl"
                                 src={news?.image}
                             />
 
-                            <div className="">
+                            <div className="col-span-2">
                                 <div className="flex items-center gap-5">
                                     <p className="text-[#969696]">
                                         <FaRegClock className="inline mr-2" />
@@ -166,17 +166,17 @@ const ArticleTab = () => {
                     {newsCollection.slice(0, 2).map((news, idx) => (
                         <div
                             key={idx}
-                            className="flex mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
                         >
                             <Image
                                 width={245}
                                 height={168}
                                 alt="image Image"
-                                className="w-[245px] h-[170px] object-cover rounded-xl"
+                                className="w-full h-full object-cover rounded-xl"
                                 src={news?.image}
                             />
 
-                            <div className="">
+                            <div className="col-span-2">
                                 <div className="flex items-center gap-5">
                                     <p className="text-[#969696]">
                                         <FaRegClock className="inline mr-2" />
@@ -195,6 +195,7 @@ const ArticleTab = () => {
                     ))}
                 </div>
             </div>
+
         </div>
     );
 };

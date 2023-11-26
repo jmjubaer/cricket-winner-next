@@ -15,7 +15,7 @@ const TopContent = () => {
         <div>
             <Tabs>
                 <div className="flex justify-center">
-                    <TabList className="flex my-5 content_tab text-[#323232] font-medium">
+                    <TabList className="flex mb-5 content_tab text-[#323232] font-medium">
                         <Tab className="w-44 border text-center p-3 cursor-pointer outline-none rounded_left">
                             <IoMdListBox className="inline text-2xl mr-1" />
                             Article
