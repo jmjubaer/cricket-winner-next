@@ -44,7 +44,7 @@ const WorldCupNews = () => {
     ];
     return (
         <div className="overflow-hidden my-2">
-            <h2 className="font-medium text-2xl my-5">Cricket world cup 2023</h2>
+            <h2 className="font-medium text-lg sm:text-2xl w-[70%] my-5">Cricket world cup 2023</h2>
             <Swiper
                 // slidesPerView={1}
                 breakpoints={{

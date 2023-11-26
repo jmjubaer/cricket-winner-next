@@ -16,16 +16,16 @@ const TopContent = () => {
             <Tabs>
                 <div className="flex justify-center">
                     <TabList className="flex mb-5 content_tab text-[#323232] font-medium">
-                        <Tab className="w-44 border text-center p-3 cursor-pointer outline-none rounded_left">
-                            <IoMdListBox className="inline text-2xl mr-1" />
+                        <Tab className="w-fit text-sm sm:text-base sm:w-44 border text-center p-1 sm:p-3 cursor-pointer outline-none rounded_left px-3">
+                            <IoMdListBox className="inline text-lg sm:text-2xl mr-1" />
                             Article
                         </Tab>
-                        <Tab className="w-44 border text-center p-3 cursor-pointer outline-none">
-                            <GiThink className="inline text-2xl mr-1" />
+                        <Tab className="w-fit text-sm sm:text-base sm:w-44 border text-center p-1 sm:p-3 cursor-pointer outline-none px-3">
+                            <GiThink className="inline text-lg sm:text-2xl mr-1" />
                             Prediction
                         </Tab>
-                        <Tab className="w-44 border text-center p-3 cursor-pointer outline-none rounded_right">
-                            <MdVideoLibrary className="inline text-2xl mr-1" />
+                        <Tab className="w-fit text-sm sm:text-base sm:w-44 border text-center p-1 sm:p-3 cursor-pointer outline-none rounded_right px-3">
+                            <MdVideoLibrary className="inline text-lg sm:text-2xl mr-1" />
                             Videos
                         </Tab>
                     </TabList>

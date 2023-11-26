@@ -59,12 +59,12 @@ const NewsSection = () => {
                     >
                         {newsCollection?.slice(0, 3)?.map((news, idx) => (
                             <SwiperSlide key={idx}>
-                                <div className="rounded-xl overflow-hidden w-full h-[360px] relative">
+                                <div className="rounded-xl overflow-hidden w-full h-[205px] sm:h-[360px] relative">
                                     <Image
                                         width={750}
                                         height={350}
                                         alt="image Image"
-                                        className="w-full h-[360px] object-cover"
+                                        className="w-full h-[205px] sm:h-[360px] object-cover"
                                         src={news?.image}
                                     />
 
@@ -74,8 +74,8 @@ const NewsSection = () => {
                                     {/* details */}
 
                                     <div className="absolute bottom-9 left-1/2 -translate-x-1/2 w-11/12">
-                                        <div className="flex items-center gap-5">
-                                            <p className="px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium w-fit">
+                                        <div className="flex items-center gap-2 sm:gap-5">
+                                            <p className="px-2 sm:px-5 py-1 sm:py-[10px] bg-[#FFC305] rounded-2xl sm:rounded-3xl font-medium w-fit">
                                                 {news?.country}
                                             </p>
                                             <p className="text-white">
@@ -85,7 +85,7 @@ const NewsSection = () => {
                                                 ).fromNow()}
                                             </p>
                                         </div>
-                                        <p className="font-bold text-xl mt-3 text-white">
+                                        <p className="font-bold sm:text-xl sm:mt-3 text-white">
                                             {news?.title}
                                         </p>
                                     </div>
@@ -102,7 +102,7 @@ const NewsSection = () => {
                         <Swiper
                             // slidesPerView={1}
                             breakpoints={{
-                                540: {
+                                670: {
                                     slidesPerView: 2,
                                     spaceBetween: 10,
                                 },
@@ -123,7 +123,7 @@ const NewsSection = () => {
                                             width={250}
                                             height={150}
                                             alt="news Image"
-                                            className="w-full h-[147px] object-cover rounded-xl"
+                                            className="w-full sm:h-[147px] object-cover object-top rounded-xl"
                                             src={news?.image}
                                         />
                                         <p className="text-[#969696] my-3">
@@ -139,7 +139,7 @@ const NewsSection = () => {
                         </Swiper>
                     </div>
                 </div>
-                <div className="md:col-span-4">
+                <div className="hidden md:block md:col-span-4">
                     {" "}
                     <div
                         className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center  my-5`}
@@ -152,7 +152,7 @@ const NewsSection = () => {
             </div>
 
             <div
-                className={`bg-[#eeee]  rounded-lg w-full h-48 flex items-center justify-center mt-10`}
+                className={`bg-[#eeee]  rounded-lg w-full h-[362px] md:h-48 flex items-center justify-center mt-10`}
             >
                 <p className="text-5xl text-black text-opacity-10">Ad Here</p>
             </div>

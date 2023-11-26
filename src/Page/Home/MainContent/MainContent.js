@@ -12,7 +12,7 @@ import LeagueNews from "./LeagueNews";
 import TodayNews from "./TodayNews";
 import MatchCard from "@/components/MatchCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination,Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -102,19 +102,34 @@ const MainContent = () => {
             },
             startingTime:
                 "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-        }
+        },
     ];
     return (
         <section className="container grid grid-cols-12 gap-5">
             {/* left content */}
-            <div className="col-span-8 bg-white p-5 rounded-xl">
+            <div className="col-span-12 lg:col-span-8 bg-white p-5 rounded-xl">
+                {/*======== Mobile content =================*/}
+                <Image src={Board} alt="Ad" className="w-full block lg:hidden my-5" />
+                
+                {/* left content */}
                 <TopContent></TopContent>
                 <WorldCupNews></WorldCupNews>
                 <LeagueNews></LeagueNews>
                 <TodayNews></TodayNews>
+
+                {/*======== Mobile content =================*/}
+                <Image src={Board} alt="Ad" className="w-full block lg:hidden my-5" />
+                <div
+                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5 lg:hidden`}
+                >
+                    <p className="text-5xl text-black text-opacity-10">
+                        Ad Here
+                    </p>
+                </div>
             </div>
+
             {/* Right Content */}
-            <div className="col-span-4 flex flex-col justify-between">
+            <div className="hidden lg:col-span-4 lg:flex flex-col justify-between">
                 <Image src={Board} alt="Ad" className="w-full" />
                 <div
                     className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5`}
@@ -123,16 +138,15 @@ const MainContent = () => {
                         Ad Here
                     </p>
                 </div>
-                
+
                 <Image src={Board} alt="Ad" className="w-full" />
 
                 {/* Suggest match */}
                 <div className="mt-5">
-                    <h2 className="font-medium text-2xl text-[#323232]">Upcoming match</h2>
-                    <Swiper
-                        slidesPerView={1}
-                        className=" mt-5"
-                    >
+                    <h2 className="font-medium text-2xl text-[#323232]">
+                        Upcoming match
+                    </h2>
+                    <Swiper slidesPerView={1} className=" mt-5">
                         {match.map((single, idx) => (
                             <SwiperSlide key={idx}>
                                 <MatchCard single={single}></MatchCard>

@@ -53,7 +53,7 @@ const ArticleTab = () => {
                 {newsCollection.slice(0, 1).map((news, idx) => (
                     <div
                         key={idx}
-                        className="rounded-xl overflow-hidden w-full h-[360px] relative"
+                        className="rounded-xl overflow-hidden w-full h-[200px] sm:h-[360px] relative"
                     >
                         <Image
                             width={750}
@@ -70,7 +70,7 @@ const ArticleTab = () => {
 
                         <div className="absolute bottom-9 left-1/2 -translate-x-1/2 w-11/12">
                             <div className="flex items-center gap-5">
-                                <p className="px-5 py-[10px] bg-[#E33E38] rounded-3xl text-white w-fit uppercase font-bold">
+                                <p className="px-2 sm:px-5 py-1 sm:py-[10px] bg-[#E33E38] rounded-2xl sm:rounded-3xl text-white w-fit sm:uppercase font-bold">
                                     {"Live"}
                                 </p>
                                 <p className="text-white">
@@ -78,7 +78,7 @@ const ArticleTab = () => {
                                     {moment(news?.timestamp).fromNow()}
                                 </p>
                             </div>
-                            <p className="font-bold text-xl mt-3 text-white">
+                            <p className="font-bold sm:text-xl mt-3 text-white">
                                 {news?.title}
                             </p>
                         </div>
@@ -112,10 +112,10 @@ const ArticleTab = () => {
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold text-xl mt-[10px]">
+                                <h3 className="font-bold sm:text-xl mt-[10px]">
                                     {news?.title}
                                 </h3>
-                                <p className="mt-[10px]">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
                             </div>
                         </div>
                     ))}
@@ -149,10 +149,10 @@ const ArticleTab = () => {
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold text-xl mt-[10px]">
+                                <h3 className="font-bold sm:text-xl mt-[10px]">
                                     {news?.title}
                                 </h3>
-                                <p className="mt-[10px]">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
                             </div>
                         </div>
                     ))}
@@ -186,10 +186,10 @@ const ArticleTab = () => {
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold text-xl mt-[10px]">
+                                <h3 className="font-bold sm:text-xl mt-[10px]">
                                     {news?.title}
                                 </h3>
-                                <p className="mt-[10px]">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
                             </div>
                         </div>
                     ))}

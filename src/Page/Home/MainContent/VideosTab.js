@@ -52,8 +52,8 @@ const VideosTab = () => {
         },
     ];
     const handlePlayVideos = () => {
-        toast.error('This button not work yet.')
-    }
+        toast.error("This button not work yet.");
+    };
     return (
         <div>
             {/*=============== Top Card ================= */}
@@ -61,32 +61,35 @@ const VideosTab = () => {
                 {videosCollection.slice(0, 1).map((video, idx) => (
                     <div
                         key={idx}
-                        className="rounded-xl overflow-hidden w-full h-[365px] relative"
+                        className="rounded-xl overflow-hidden w-full sm:h-[365px] relative"
                     >
                         <Image
                             width={750}
                             height={350}
                             alt="image Image"
-                            className="w-full h-[360px] object-cover"
+                            className="w-full sm:h-[360px] object-cover"
                             src={video?.image}
                         />
 
                         {/* Overlay */}
-                        <div className="absolute w-full h-full top-0 left-0 from-[#000] to-transparent to-60% bg-gradient-to-t"></div>
+                        <div className="absolute w-full h-full top-0 left-0 from-[#000] sm:to-transparent sm:to-60% bg-gradient-to-t"></div>
 
                         {/* Play button */}
-                        <button onClick={handlePlayVideos} className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl w-[71px] h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1">
+                        <button
+                            onClick={handlePlayVideos}
+                            className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  sm:text-4xl w-9 sm:w-[71px] h-9 sm:h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1"
+                        >
                             <FaPlay />
                         </button>
 
                         {/* details */}
 
-                        <div className="absolute bottom-9 left-1/2 -translate-x-1/2 w-11/12">
+                        <div className="absolute bottom-2 sm:bottom-9 left-1/2 -translate-x-1/2 w-11/12">
                             <p className="text-white">
                                 <FaPlay className="inline mr-2" />
                                 {video?.duration}
                             </p>
-                            <p className="font-bold text-xl mt-3 text-white">
+                            <p className="font-bold sm:text-xl mt-1 sm:mt-3 text-white">
                                 {video?.title}
                             </p>
                         </div>
@@ -101,7 +104,7 @@ const VideosTab = () => {
                     {videosCollection.slice(1, 3).map((video, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-3 mt-[10px] gap-5"
+                            className="grid grid-cols-3 mt-5 sm:mt-[10px] gap-5"
                         >
                             <div className="relative">
                                 <Image
@@ -111,9 +114,11 @@ const VideosTab = () => {
                                     className="w-full h-full object-cover rounded-xl"
                                     src={video?.image}
                                 />
-
                                 {/* Play button */}
-                                <button onClick={handlePlayVideos} className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl w-[71px] h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1">
+                                <button
+                                    onClick={handlePlayVideos}
+                                    className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  sm:text-4xl w-9 sm:w-[71px] h-9 sm:h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1"
+                                >
                                     <FaPlay />
                                 </button>
                             </div>
@@ -128,10 +133,10 @@ const VideosTab = () => {
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold text-xl mt-[10px]">
+                                <h3 className="font-bold sm:text-xl mt-[10px]">
                                     {video?.title}
                                 </h3>
-                                <p className="mt-[10px] text-[#646464]">
+                                <p className="mt-[10px] hidden sm:block text-[#646464]">
                                     {video?.description.slice(0, 100)}.....
                                 </p>
                             </div>
@@ -157,9 +162,11 @@ const VideosTab = () => {
                                     className="w-full h-full object-cover rounded-xl"
                                     src={video?.image}
                                 />
-
                                 {/* Play button */}
-                                <button onClick={handlePlayVideos} className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl w-[71px] h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1">
+                                <button
+                                    onClick={handlePlayVideos}
+                                    className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  sm:text-4xl w-9 sm:w-[71px] h-9 sm:h-[71px] flex justify-center items-center bg-[#323232] bg-opacity-50 rounded-full pl-1"
+                                >
                                     <FaPlay />
                                 </button>
                             </div>
@@ -174,10 +181,10 @@ const VideosTab = () => {
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold text-xl mt-[10px]">
+                                <h3 className="font-bold sm:text-xl mt-[10px]">
                                     {video?.title}
                                 </h3>
-                                <p className="mt-[10px] text-[#646464]">
+                                <p className="mt-[10px] hidden sm:block text-[#646464]">
                                     {video?.description.slice(0, 100)}.....
                                 </p>
                             </div>

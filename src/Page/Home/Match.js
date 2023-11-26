@@ -2,7 +2,7 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination,Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -93,20 +93,20 @@ const Match = () => {
             },
             startingTime:
                 "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-        }
+        },
     ];
     return (
         <div className="container mt-5">
             <Tabs>
-                <div className="flex justify-between">
-                    <h2 className="text-2xl font-medium">
+                <div className="flex justify-between items-center gap-2">
+                    <h2 className="sm:text-2xl font-medium">
                         Cricket Match Predictions & Tips
                     </h2>
                     <TabList className="flex match_tab">
-                        <Tab className="border-0 border-b-2 cursor-pointer px-5 py-3 outline-none">
+                        <Tab className="border-0 border-b-2 cursor-pointer px-3 sm:px-5 py-3 outline-none">
                             Today
                         </Tab>
-                        <Tab className="border-0 border-b-2 cursor-pointer px-5 py-3 outline-none">
+                        <Tab className="border-0 border-b-2 cursor-pointer px-3 sm:px-5 py-3 outline-none">
                             Tomorrow
                         </Tab>
                     </TabList>
@@ -118,23 +118,23 @@ const Match = () => {
                         breakpoints={{
                             540: {
                                 slidesPerView: 2,
-                                spaceBetween: 10,
+                                spaceBetween: 10
                             },
                             790: {
                                 slidesPerView: 3,
-                                spaceBetween: 20,
+                                spaceBetween: 20
                             },
                             1220: {
                                 slidesPerView: 4,
-                                spaceBetween: 20,
+                                spaceBetween: 20
                             },
                             1440: {
                                 slidesPerView: 5,
-                                spaceBetween: 30,
+                                spaceBetween: 30
                             },
                         }}
                         spaceBetween={30}
-                        navigation={true}
+                        navigation
                         modules={[Navigation]}
                         className="matchSwiper mt-5"
                     >
@@ -146,7 +146,9 @@ const Match = () => {
                     </Swiper>
                 </TabPanel>
                 <TabPanel>
-                    <h2 className="text-3xl mt-10 text-center text-[#969696]">No Match Available</h2>
+                    <h2 className="text-3xl mt-10 text-center text-[#969696]">
+                        No Match Available
+                    </h2>
                 </TabPanel>
             </Tabs>
         </div>

@@ -109,7 +109,8 @@ const PredictionTab = () => {
                         />
 
                         {/* Overlay */}
-                        <div className="absolute w-full h-full top-0 left-0 from-[#000] to-transparent to-60% bg-gradient-to-t"></div>
+                        <div className="absolute w-full h-full top-0 left-0 from-[#000] sm:to-transparent sm:to-60% bg-gradient-to-t"></div>
+
 
                         <div className="absolute bottom-7 left-0 text-center w-full text-white">
                             <h3 className="text-xl font-medium">
@@ -130,8 +131,10 @@ const PredictionTab = () => {
 
             {/*========================= Latest Prediction ======================*/}
             <div className="mt-5">
-                <h2 className="font-medium text-2xl text-[#323232]">Latest Prediction</h2>
-                <div className="grid grid-cols-2 gap-3 gap-y-5 mt-5">
+                <h2 className="font-medium text-2xl text-[#323232]">
+                    Latest Prediction
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3 gap-y-5 mt-5">
                     {predictionCollection.map((prediction, idx) => (
                         <div key={idx} className="">
                             <Image
@@ -158,9 +161,11 @@ const PredictionTab = () => {
 
             {/*========================= IPL Prediction ======================*/}
             <div className="mt-5">
-                <h2 className="font-medium text-2xl text-[#323232]">IPL Prediction</h2>
-                <div className="grid grid-cols-2 gap-3 gap-y-5 mt-5">
-                    {predictionCollection.slice(1,3).map((prediction, idx) => (
+                <h2 className="font-medium text-2xl text-[#323232]">
+                    IPL Prediction
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3 gap-y-5 mt-5">
+                    {predictionCollection.slice(1, 3).map((prediction, idx) => (
                         <div key={idx} className="">
                             <Image
                                 width={245}

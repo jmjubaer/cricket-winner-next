@@ -44,7 +44,7 @@ const TodayNews = () => {
     ];
     return (
         <div className="overflow-hidden my-2">
-            <h2 className="font-medium text-2xl my-5">{"Today's Cricket Match Predictions"}</h2>
+            <h2 className="font-medium sm:text-2xl my-5 w-[70%]">{"Today's Cricket Match Predictions"}</h2>
             <Swiper
                 // slidesPerView={1}
                 breakpoints={{
