@@ -3,6 +3,7 @@ import "./globals.css";
 import TopNav from "@/Page/Shered/TopNav";
 import MainNav from "@/Page/Shered/MainNav";
 import Footer from "@/Page/Shered/Footer";
+import { Toaster } from "react-hot-toast";
 
 const onest = Onest({
     subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
                 <footer className="bg-black text-white">
                     <Footer></Footer>
                 </footer>
+            <Toaster />
             </body>
         </html>
     );
