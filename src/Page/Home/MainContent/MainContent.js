@@ -16,6 +16,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import RankTable from "./RankTable";
 const MainContent = () => {
     const match = [
         {
@@ -109,8 +110,12 @@ const MainContent = () => {
             {/* left content */}
             <div className="col-span-12 lg:col-span-8 bg-white p-5 rounded-xl">
                 {/*======== Mobile content =================*/}
-                <Image src={Board} alt="Ad" className="w-full block lg:hidden my-5" />
-                
+                <Image
+                    src={Board}
+                    alt="Ad"
+                    className="w-full block lg:hidden my-5"
+                />
+
                 {/* left content */}
                 <TopContent></TopContent>
                 <WorldCupNews></WorldCupNews>
@@ -118,7 +123,11 @@ const MainContent = () => {
                 <TodayNews></TodayNews>
 
                 {/*======== Mobile content =================*/}
-                <Image src={Board} alt="Ad" className="w-full block lg:hidden my-5" />
+                <Image
+                    src={Board}
+                    alt="Ad"
+                    className="w-full block lg:hidden my-5"
+                />
                 <div
                     className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5 lg:hidden`}
                 >
@@ -130,9 +139,10 @@ const MainContent = () => {
 
             {/* Right Content */}
             <div className="hidden lg:col-span-4 lg:flex flex-col justify-between">
-                <Image src={Board} alt="Ad" className="w-full" />
+                {/* <Image src={Board} alt="Ad" className="w-full" /> */}
+                <RankTable></RankTable>
                 <div
-                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5`}
+                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5 overflow-hidden`}
                 >
                     <p className="text-5xl text-black text-opacity-10">
                         Ad Here

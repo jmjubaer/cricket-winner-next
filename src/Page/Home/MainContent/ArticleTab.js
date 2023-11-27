@@ -92,7 +92,7 @@ const ArticleTab = () => {
                     {newsCollection.map((news, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
                         >
                             <Image
                                 width={245}
@@ -103,19 +103,26 @@ const ArticleTab = () => {
                             />
 
                             <div className="col-span-2">
-                                <div className="flex items-center gap-5">
-                                    <p className="text-[#969696]">
-                                        <FaRegClock className="inline mr-2" />
+                                <div className="flex items-center gap-2 sm:gap-5">
+                                    <p className="text-[#969696] text-sm sm:text-base">
+                                        <FaRegClock className="inline mr-1" />
                                         {moment(news?.timestamp).fromNow()}
                                     </p>
-                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-sm">
+                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-xs sm:text-sm">
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold sm:text-xl mt-[10px]">
-                                    {news?.title}
+                                <h3 className="font-bold text-sm sm:text-xl mt-[10px]">
+                                    <span className="hidden sm:block">
+                                        {news?.title}
+                                    </span>
+                                    <span className="sm:hidden block">
+                                        {news?.title.slice(0, 40)}....
+                                    </span>
                                 </h3>
-                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">
+                                    {news?.description}
+                                </p>
                             </div>
                         </div>
                     ))}
@@ -129,7 +136,7 @@ const ArticleTab = () => {
                     {newsCollection.slice(0, 2).map((news, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
                         >
                             <Image
                                 width={245}
@@ -140,19 +147,26 @@ const ArticleTab = () => {
                             />
 
                             <div className="col-span-2">
-                                <div className="flex items-center gap-5">
-                                    <p className="text-[#969696]">
-                                        <FaRegClock className="inline mr-2" />
+                                <div className="flex items-center gap-2 sm:gap-5">
+                                    <p className="text-[#969696] text-sm sm:text-base">
+                                        <FaRegClock className="inline mr-1" />
                                         {moment(news?.timestamp).fromNow()}
                                     </p>
-                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-sm">
+                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-xs sm:text-sm">
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold sm:text-xl mt-[10px]">
-                                    {news?.title}
+                                <h3 className="font-bold text-sm sm:text-xl mt-[10px]">
+                                    <span className="hidden sm:block">
+                                        {news?.title}
+                                    </span>
+                                    <span className="sm:hidden block">
+                                        {news?.title.slice(0, 40)}....
+                                    </span>
                                 </h3>
-                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">
+                                    {news?.description}
+                                </p>
                             </div>
                         </div>
                     ))}
@@ -166,7 +180,7 @@ const ArticleTab = () => {
                     {newsCollection.slice(0, 2).map((news, idx) => (
                         <div
                             key={idx}
-                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-5 "
+                            className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
                         >
                             <Image
                                 width={245}
@@ -177,25 +191,31 @@ const ArticleTab = () => {
                             />
 
                             <div className="col-span-2">
-                                <div className="flex items-center gap-5">
-                                    <p className="text-[#969696]">
-                                        <FaRegClock className="inline mr-2" />
+                                <div className="flex items-center gap-2 sm:gap-5">
+                                    <p className="text-[#969696] text-sm sm:text-base">
+                                        <FaRegClock className="inline mr-1" />
                                         {moment(news?.timestamp).fromNow()}
                                     </p>
-                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-sm">
+                                    <p className="px-3 py-[5px] bg-[#323232] rounded-3xl w-fit font-medium text-white text-xs sm:text-sm">
                                         {"Asia Cup"}
                                     </p>
                                 </div>
-                                <h3 className="font-bold sm:text-xl mt-[10px]">
-                                    {news?.title}
+                                <h3 className="font-bold text-sm sm:text-xl mt-[10px]">
+                                    <span className="hidden sm:block">
+                                        {news?.title}
+                                    </span>
+                                    <span className="sm:hidden block">
+                                        {news?.title.slice(0, 40)}....
+                                    </span>
                                 </h3>
-                                <p className="mt-[10px] hidden sm:block">{news?.description}</p>
+                                <p className="mt-[10px] hidden sm:block">
+                                    {news?.description}
+                                </p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-
         </div>
     );
 };
