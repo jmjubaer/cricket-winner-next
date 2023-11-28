@@ -110,11 +110,9 @@ const MainContent = () => {
             {/* left content */}
             <div className="col-span-12 lg:col-span-8 bg-white p-5 rounded-xl">
                 {/*======== Mobile content =================*/}
-                <Image
-                    src={Board}
-                    alt="Ad"
-                    className="w-full block lg:hidden my-5"
-                />
+                <div className="w-full block lg:hidden my-5">
+                    <RankTable></RankTable>
+                </div>
 
                 {/* left content */}
                 <TopContent></TopContent>
@@ -122,12 +120,9 @@ const MainContent = () => {
                 <LeagueNews></LeagueNews>
                 <TodayNews></TodayNews>
 
-                {/*======== Mobile content =================*/}
-                <Image
-                    src={Board}
-                    alt="Ad"
-                    className="w-full block lg:hidden my-5"
-                />
+                <div className="w-full block lg:hidden my-5">
+                    <RankTable></RankTable>
+                </div>
                 <div
                     className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5 lg:hidden`}
                 >
@@ -149,7 +144,8 @@ const MainContent = () => {
                     </p>
                 </div>
 
-                <Image src={Board} alt="Ad" className="w-full" />
+                {/* <Image src={Board} alt="Ad" className="w-full" /> */}
+                <RankTable></RankTable>
 
                 {/* Suggest match */}
                 <div className="mt-5">

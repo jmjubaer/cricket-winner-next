@@ -1,7 +1,7 @@
 import React from "react";
 import sponsor from "@/assets/Home/Sponsered.png";
 import Image from "next/image";
-import { FaCalendarDays } from "react-icons/fa6";
+import { FaCalendarDays, FaRegCircleQuestion } from "react-icons/fa6";
 import { MdSportsCricket } from "react-icons/md";
 import { FaTrophy, FaUserFriends } from "react-icons/fa";
 import player_1 from "@/assets/Home/virat.png";
@@ -172,7 +172,7 @@ const RankTable = () => {
                                         <th className="font-medium py-3 px-3">
                                             Rank
                                         </th>
-                                        <th className="font-medium py-3 px-3">
+                                        <th className="font-medium py-3">
                                             Name
                                         </th>
                                         <th className="font-medium py-3 px-3">
@@ -183,14 +183,18 @@ const RankTable = () => {
                                         </th>
                                         <th className="font-medium py-3 px-3">
                                             Accuracy
+                                            <FaRegCircleQuestion className="inline ml-1" />
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {usersInfo
-                                        ?.slice(0, 10)
+                                        ?.slice(3, 13)
                                         ?.map((user, idx) => (
-                                            <tr key={idx} className="">
+                                            <tr
+                                                key={idx}
+                                                className="even:bg-[#EAECF0]"
+                                            >
                                                 <th>{idx + 1}</th>
                                                 <td className="flex items-center gap-1 py-2">
                                                     <Image
@@ -215,7 +219,13 @@ const RankTable = () => {
                                                     </p>
                                                 </td>
                                                 <th>
-                                                    <p className="mx-auto bg-[#ECFDF3] text-[#027A48] w-fit text-sm border rounded-full font-medium py-1 px-2 text-center">
+                                                    <p
+                                                        className={`mx-auto w-fit text-sm border rounded-full font-medium py-1 px-2 text-center ${
+                                                            user?.accuracy > 30
+                                                                ? "bg-[#ECFDF3] text-[#027A48]"
+                                                                : "bg-[#E33E38] bg-opacity-10 text-[#E33E38]"
+                                                        }`}
+                                                    >
                                                         {user?.accuracy}%
                                                     </p>
                                                 </th>
@@ -226,9 +236,76 @@ const RankTable = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2 className="text-3xl mt-10 text-center text-[#969696]">
-                            No Match Available
-                        </h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full">
+                                {/* head */}
+                                <thead>
+                                    <tr className="font-medium my-3 text-[#667085] bg-[#EAECF0] text-left text-sm">
+                                        <th className="font-medium py-3 px-3">
+                                            Rank
+                                        </th>
+                                        <th className="font-medium py-3">
+                                            Name
+                                        </th>
+                                        <th className="font-medium py-3 px-3">
+                                            W
+                                        </th>
+                                        <th className="font-medium py-3 px-3">
+                                            L
+                                        </th>
+                                        <th className="font-medium py-3 px-3">
+                                            Accuracy
+                                            <FaRegCircleQuestion className="inline ml-1" />
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {usersInfo
+                                        ?.slice(0, 10)
+                                        ?.map((user, idx) => (
+                                            <tr
+                                                key={idx}
+                                                className="even:bg-[#EAECF0]"
+                                            >
+                                                <th>{idx + 1}</th>
+                                                <td className="flex items-center gap-1 py-2">
+                                                    <Image
+                                                        width={30}
+                                                        height={30}
+                                                        className="w-[30px] h-[30px] object-cover rounded-full border"
+                                                        src={user?.image}
+                                                        alt="User Image"
+                                                    />
+                                                    <p className="font-medium text-sm">
+                                                        {user?.name}
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p className="mx-auto bg-[#ECFDF3] text-[#027A48] w-fit text-sm border rounded-full font-medium py-1 px-[6px] text-center">
+                                                        {user?.win}
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p className="mx-auto bg-[#E33E38] bg-opacity-10 w-fit text-[#E33E38] text-sm border rounded-full text-center py-1 px-[6px] font-medium">
+                                                        {user?.loss}
+                                                    </p>
+                                                </td>
+                                                <th>
+                                                    <p
+                                                        className={`mx-auto w-fit text-sm border rounded-full font-medium py-1 px-2 text-center ${
+                                                            user?.accuracy > 30
+                                                                ? "bg-[#ECFDF3] text-[#027A48]"
+                                                                : "bg-[#E33E38] bg-opacity-10 text-[#E33E38]"
+                                                        }`}
+                                                    >
+                                                        {user?.accuracy}%
+                                                    </p>
+                                                </th>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>
