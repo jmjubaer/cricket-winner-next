@@ -6,10 +6,10 @@ import { GoArrowUpRight } from "react-icons/go";
 import { FaTimes } from "react-icons/fa";
 const MainNav = () => {
     const [control, setControl] = useState(false);
-    console.log(control);
+    // console.log(control);
     return (
         <div className="shadow-lg">
-            <nav className="flex justify-between container items-center relative">
+            <nav className="flex justify-between w-[1136px] mx-auto max-w-[96%] items-center relative">
                 <button
                     onClick={() => setControl(!control)}
                     className="block md:hidden text-[#323232] cursor-pointer"
@@ -21,20 +21,17 @@ const MainNav = () => {
                     )}
                 </button>
                 <div
-                    className={`absolute top-[50px] left-0 md:static md:h-auto md:w-auto overflow-hidden transition-all duration-500 ${
+                    className={`absolute top-[50px] left-0 md:static md:h-auto md:w-auto overflow-hidden transition-all duration-500 z-50 ${
                         control
                             ? "w-full bg-white md:bg-transparent h-[calc(100vh-100px)] text-white text-left"
                             : "w-0"
                     }`}
                 >
                     <ul
-                        className={`flex-col flex md:flex-row text-[#969696] md:items-center gap-y-3`}
+                        className={`flex-col flex md:flex-row text-[#969696] md:items-center gap-y-3 z-50`}
                     >
                         <li>
-                            <Link
-                                className="active link"
-                                href={"/"}
-                            >
+                            <Link className="active link" href={"/"}>
                                 Home
                             </Link>
                         </li>

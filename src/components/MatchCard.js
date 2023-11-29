@@ -4,8 +4,9 @@ import { useTimer } from "react-timer-hook";
 import { FaRegClock } from "react-icons/fa6";
 import moment from "moment";
 import { RiMessage3Fill } from "react-icons/ri";
+import Link from "next/link";
 const MatchCard = ({ single }) => {
-    const { MatchTitle, status, team, startingTime } = single || {};
+    const { MatchTitle, status, team, startingTime,id } = single || {};
     const { team_1, team_2 } = team || {};
     const expiryTimestamp = new Date(startingTime);
     expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 600);
@@ -65,7 +66,7 @@ const MatchCard = ({ single }) => {
                 </p>
             </div>
             <button className="px-3 py-2 border rounded-lg mx-auto block mt-3 hover:bg-[#323232] text-[#646464] hover:text-white "><RiMessage3Fill className="inline text-xl" /> Join Discussion (2k)</button>
-            <button className="primary_btn block w-full text-[#323232] mt-3">View Prediction</button>
+            <Link href={`/match/${id}`} className="primary_btn text-center block w-full text-[#323232] mt-3">View Prediction</Link>
         </div>
     );
 };

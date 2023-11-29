@@ -8,6 +8,8 @@ import player_1 from "@/assets/Home/virat.png";
 import player_2 from "@/assets/Home/player.png";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Logo1xBet from "../../../assets/Match/1x-logo.png";
+import gift from "../../../assets/Match/gift.png";
 const RankTable = () => {
     const usersInfo = [
         {
@@ -107,11 +109,13 @@ const RankTable = () => {
         <div className="border">
             {/* sponsor banner */}
             <a target="_blank" href="#" className="w-full z-10">
-                <Image
-                    src={sponsor}
-                    className="w-full rounded-t-2xl z-10"
-                    alt="Sponsor header"
-                />
+                <div className="flex justify-between items-center bg-[#323232] rounded-t-2xl overflow-hidden">
+                    <h4 className="text-xs uppercase font-extrabold text-white mx-3">
+                        SPONSORED BY
+                    </h4>
+                    <Image src={Logo1xBet} alt="1X Bet Logo" />
+                    <Image src={gift} alt="Image" />
+                </div>
             </a>
             <div className="bg-[#3391B2] py-4 px-4 relative overflow-hidden">
                 <div className="">
@@ -317,11 +321,13 @@ const RankTable = () => {
             </button>
             {/* sponsor banner */}
             <a target="_blank" href="#" className="w-full z-10">
-                <Image
-                    src={sponsor}
-                    className="w-full rounded-b-2xl z-10"
-                    alt="Sponsor header"
-                />
+                <div className="flex justify-between items-center bg-[#323232] rounded-b-2xl overflow-hidden">
+                    <h4 className="text-xs uppercase font-extrabold text-white mx-3">
+                        SPONSORED BY
+                    </h4>
+                    <Image src={Logo1xBet} alt="1X Bet Logo" />
+                    <Image src={gift} alt="Image" />
+                </div>
             </a>
         </div>
     );
