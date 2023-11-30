@@ -9,7 +9,6 @@ const MatchCard = ({ single }) => {
     const { MatchTitle, status, team, startingTime,id } = single || {};
     const { team_1, team_2 } = team || {};
     const expiryTimestamp = new Date(startingTime);
-    expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 600);
     const { minutes, hours } = useTimer({
         expiryTimestamp,
         onExpire: () => console.warn("onExpire called"),
