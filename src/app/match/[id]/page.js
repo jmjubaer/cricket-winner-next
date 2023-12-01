@@ -381,21 +381,21 @@ const MatchPage = ({ params }) => {
                             </div>
                         </div>
                         {/* Table */}
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-auto w-full">
+                            <table className=" w-full">
                                 {/* head */}
                                 <thead>
                                     <tr className="font-medium my-3 text-[#969696] bg-[#EAECF0]  text-sm">
-                                        <th className="font-medium py-3 px-3">
+                                        <th className="font-medium py-3 px-2">
                                             Rank
                                         </th>
-                                        <th className="font-medium py-3 text-left">
+                                        <th className="font-medium py-3 text-left px-2">
                                             User Average Accuracy
                                         </th>
-                                        <th className="font-medium py-3 px-3">
+                                        <th className="font-medium py-3 px-2">
                                             Toss
                                         </th>
-                                        <th className="font-medium py-3 px-3">
+                                        <th className="font-medium py-3 px-2">
                                             Match
                                         </th>
                                     </tr>
@@ -411,7 +411,7 @@ const MatchPage = ({ params }) => {
                                             >
                                                 <th>{idx + 1}</th>
                                                 <td className="py-2">
-                                                    <div className="flex justify-between gap-2">
+                                                    <div className="flex justify-between sm:gap-2">
                                                         <div className="flex items-center gap-1">
                                                             <Image
                                                                 width={30}
@@ -427,7 +427,7 @@ const MatchPage = ({ params }) => {
                                                             </p>
                                                         </div>
                                                         <p
-                                                            className={`bg-opacity-10 w-fit text-sm border rounded-full text-center py-1 px-[6px] font-medium ${
+                                                            className={`bg-opacity-10 w-fit sm:text-sm text-xs leading-3 border flex justify-center items-center rounded-full text-center py-1 px-[6px] font-medium ${
                                                                 user?.accuracy >
                                                                 40
                                                                     ? "bg-[#027A48] text-[#027A48]"
@@ -451,13 +451,13 @@ const MatchPage = ({ params }) => {
                                                     />
                                                 </td>
                                                 <td>
-                                                    <div className="relative w-[42px] h-[42px] bg-[#D8D8D8] mx-auto flex items-center justify-center rounded-full">
+                                                    <div className="relative w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] bg-[#D8D8D8] mx-auto flex items-center justify-center rounded-full">
                                                         <Image
                                                             width={22}
                                                             height={22}
                                                             src={team_1?.flag}
                                                             alt="Flag image"
-                                                            className="w-full h-full rounded-full object-cover p-[10px]"
+                                                            className="w-full h-full rounded-full object-cover p-2 sm:p-[10px]"
                                                         />
                                                         {user?.accuracy > 40 ? (
                                                             <AiFillLike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
@@ -470,13 +470,13 @@ const MatchPage = ({ params }) => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div className="relative w-[42px] h-[42px] bg-[#D8D8D8] mx-auto flex items-center justify-center rounded-full">
+                                                    <div className="relative w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] bg-[#D8D8D8] mx-auto flex items-center justify-center rounded-full">
                                                         <Image
                                                             width={22}
                                                             height={22}
                                                             src={team_2?.flag}
                                                             alt="Flag image"
-                                                            className="w-full h-full rounded-full object-cover p-[10px]"
+                                                            className="w-full h-full rounded-full object-cover p-2 sm:p-[10px]"
                                                         />
                                                         {user?.accuracy > 40 ? (
                                                             <AiFillLike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
