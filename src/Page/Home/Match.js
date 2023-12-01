@@ -95,7 +95,7 @@ const Match = () => {
         })()
     },[])
     return (
-        <div className="container mt-5">
+        <div className="container overflow-hidden mt-5">
             <Tabs>
                 <div className="flex justify-between items-center gap-2">
                     <h2 className="sm:text-2xl font-medium">
