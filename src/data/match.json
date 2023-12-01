@@ -8,11 +8,13 @@
     "team": {
       "team_1": {
         "teamName": "india",
+        "shortName": "IND",
         "flag": "https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo=",
         "logo": "https://i.ibb.co/J2yZMCh/india.png"
       },
       "team_2": {
         "teamName": "Australia",
+        "shortName": "AUS",
         "flag": "https://media.istockphoto.com/id/1340727526/vector/flags-of-australia-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=tyL_HkGKsFGnwMh41AdnfXSke7BlUaVNJewEgWzDYLQ=",
         "logo": "https://i.ibb.co/j9KvDcw/austrolia-log.jpg"
       }
@@ -28,11 +30,13 @@
     "team": {
       "team_1": {
         "teamName": "Sri Lanka",
+        "shortName": "SL",
         "flag": "https://media.istockphoto.com/id/1063902464/vector/flag-of-sri-lanka.jpg?s=612x612&w=0&k=20&c=hggRyqTyT8qmG6LbCU--IexdL-wnkzsBs-KCh-WbngM=",
         "logo": "https://i.ibb.co/vDqP6f8/srilongka.jpg"
       },
       "team_2": {
         "teamName": "Australia",
+        "shortName": "AUS",
         "flag": "https://media.istockphoto.com/id/1340727526/vector/flags-of-australia-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=tyL_HkGKsFGnwMh41AdnfXSke7BlUaVNJewEgWzDYLQ=",
         "logo": "https://i.ibb.co/j9KvDcw/austrolia-log.jpg"
       }
@@ -48,11 +52,13 @@
     "team": {
       "team_1": {
         "teamName": "india",
+        "shortName": "IND",
         "flag": "https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo=",
         "logo": "https://i.ibb.co/J2yZMCh/india.png"
       },
       "team_2": {
         "teamName": "Pakistan",
+        "shortName": "PAK",
         "flag": "https://media.istockphoto.com/id/652750800/vector/pakistan.jpg?s=612x612&w=0&k=20&c=x14F0XneN74dfVp2qL_vfT8JCZaHRB8ZKUIsrf0lqGY=",
         "logo": "https://i.ibb.co/M8DP1sz/pakistan-logo.png"
       }
@@ -68,11 +74,13 @@
     "team": {
       "team_1": {
         "teamName": "india",
+        "shortName": "IND",
         "flag": "https://media.istockphoto.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=0&k=20&c=ejlQRX4C_Mb40wz1JQcB5vKYcOKlfRtry2W6UcX6mlo=",
         "logo": "https://i.ibb.co/J2yZMCh/india.png"
       },
       "team_2": {
         "teamName": "New Zealand",
+        "shortName": "NZ",
         "flag": "https://media.istockphoto.com/id/181060494/photo/new-zealand-flag.jpg?s=612x612&w=0&k=20&c=mDVFe-aA_XiuBFB3FtwkHWTpSCsYptEvtBz6RwvqYhI=",
         "logo": "https://i.ibb.co/4RFVt0C/nz-2.png"
       }
@@ -88,11 +96,13 @@
     "team": {
       "team_1": {
         "teamName": "Sri Lanka",
+        "shortName": "SL",
         "flag": "https://media.istockphoto.com/id/1063902464/vector/flag-of-sri-lanka.jpg?s=612x612&w=0&k=20&c=hggRyqTyT8qmG6LbCU--IexdL-wnkzsBs-KCh-WbngM=",
         "logo": "https://i.ibb.co/vDqP6f8/srilongka.jpg"
       },
       "team_2": {
         "teamName": "Australia",
+        "shortName": "AUS",
         "flag": "https://media.istockphoto.com/id/1340727526/vector/flags-of-australia-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=tyL_HkGKsFGnwMh41AdnfXSke7BlUaVNJewEgWzDYLQ=",
         "logo": "https://i.ibb.co/j9KvDcw/austrolia-log.jpg"
       }
