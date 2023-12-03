@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
@@ -7,42 +8,20 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { FaRegClock } from "react-icons/fa6";
 import moment from "moment";
+import VerticalNewsCard from "@/components/Card/VerticalNewsCard";
 
 const NewsSection = () => {
-    const newsCollection = [
-        {
-            country: "England",
-            image: "https://i.ibb.co/xz9njP6/image-6.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Waqar Younis praises Virat Kohli as a 'crazy man' who will shatter records beyond imagination.",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/QK5wY3T/image-9.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Cricket Australia ICC World Cup 2023 Squad Announced",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
-            description: "",
-        },
-    ];
+    const [news, setNews] = useState([]);
+    useEffect(() => {
+        (async () => {
+            // News data fetch ===
+            const newsRes = await fetch("/api/news");
+            const news = await newsRes.json();
+            // console.log(news);
+            setNews(news);
+        })();
+    }, []);
+    console.log(news);
     return (
         <div className="container">
             <div className="grid grid-cols-12 gap-5">
@@ -57,7 +36,7 @@ const NewsSection = () => {
                         modules={[Pagination, Autoplay]}
                         className="mySwiper mt-5"
                     >
-                        {newsCollection?.slice(0, 3)?.map((news, idx) => (
+                        {news?.slice(0, 3)?.map((news, idx) => (
                             <SwiperSlide key={idx}>
                                 <div className="rounded-xl overflow-hidden w-full h-[205px] sm:h-[360px] relative">
                                     <Image
@@ -104,36 +83,22 @@ const NewsSection = () => {
                             breakpoints={{
                                 670: {
                                     slidesPerView: 2,
-                                    spaceBetween: 10,
+                                    // spaceBetween: 10,
                                 },
                                 1220: {
                                     slidesPerView: 3,
-                                    spaceBetween: 20,
+                                    // spaceBetween: 20,
                                 },
                             }}
-                            spaceBetween={30}
                             navigation={true}
                             modules={[Navigation]}
                             className="newsSlider mt-5"
                         >
-                            {newsCollection.map((news, idx) => (
-                                <SwiperSlide key={idx}>
-                                    <div className="p-3 mx-auto">
-                                        <Image
-                                            width={250}
-                                            height={150}
-                                            alt="news Image"
-                                            className="w-full sm:h-[147px] object-cover object-top rounded-xl"
-                                            src={news?.image}
-                                        />
-                                        <p className="text-[#969696] my-3">
-                                            <FaRegClock className="inline mr-2" />
-                                            {moment(news?.timestamp).fromNow()}
-                                        </p>
-                                        <p className="font-bold text-sm">
-                                            {news?.title}
-                                        </p>
-                                    </div>
+                            {news.map((news) => (
+                                <SwiperSlide key={news?.id}>
+                                    <VerticalNewsCard
+                                        news={news}
+                                    ></VerticalNewsCard>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

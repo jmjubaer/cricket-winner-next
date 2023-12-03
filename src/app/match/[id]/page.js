@@ -10,6 +10,11 @@ import { useTimer } from "react-timer-hook";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { AiFillDislike, AiFillLike } from "react-icons/ai";
+import VectorBg from "@/components/VectorBg";
+import NewsCardSmall from "@/components/Card/NewsCardSmall";
+import LatestNewsSection from "@/components/LatestNewsSection";
+import SuggestedNewsSection from "@/components/SuggestedNewsSection";
+import TrendingNewsSection from "@/components/TrendingNewsSection";
 const MatchPage = ({ params }) => {
     const [match, setMatch] = useState({});
     const [news, setNews] = useState([]);
@@ -153,8 +158,8 @@ const MatchPage = ({ params }) => {
                         </div>
 
                         {/* Card Content */}
-                        <div className="bg-[#3391B2] relative overflow-hidden pt-5">
-                            <div className="flex items-center justify-between sm:justify-center gap-0 sm:gap-3 mx-1">
+                        <VectorBg>
+                            <div className="flex items-center justify-between sm:justify-center gap-0 sm:gap-3 mx-1 pt-5">
                                 <div className="w-fit">
                                     <div className="w-[120px] h-[120px] rounded-full overflow-hidden mx-auto bg-white -mb-3 flex items-center justify-center">
                                         <Image
@@ -222,11 +227,7 @@ const MatchPage = ({ params }) => {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Vector Image for overlay */}
-                            <MdSportsCricket className="text-8xl text-white text-opacity-20 absolute -top-6 -left-4" />
-                            <MdSportsCricket className="text-8xl text-white text-opacity-20 absolute -bottom-9 left-[20%]" />
-                        </div>
+                        </VectorBg>
 
                         <div className="text-center my-5">
                             {/* Todo: make dynamic base on time */}
@@ -498,125 +499,11 @@ const MatchPage = ({ params }) => {
                 {/* Right side content */}
                 <div className="">
                     {/* latest news */}
-                    <div className="">
-                        <h2 className="text-2xl font-medium capitalize">
-                            latest news
-                        </h2>
-                        <div className="mt-[10px]">
-                            {news?.slice(0, 3)?.map((singleNews, idx) => (
-                                <div
-                                    key={idx}
-                                    className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
-                                >
-                                    <Image
-                                        width={245}
-                                        height={168}
-                                        alt="image Image"
-                                        className="w-full h-full object-cover rounded-xl"
-                                        src={singleNews?.image}
-                                    />
-
-                                    <div className="col-span-2">
-                                        <p className="text-[#969696] text-sm sm:text-base">
-                                            <FaRegClock className="inline mr-1" />
-                                            {moment(
-                                                singleNews?.timestamp
-                                            ).fromNow()}
-                                        </p>
-                                        <h3 className="font-bold text-sm mt-[10px]">
-                                            <span className="">
-                                                {singleNews?.title.slice(0, 60)}
-                                                ....
-                                            </span>
-                                        </h3>
-                                        <p className="mt-[10px] hidden sm:block md:hidden">
-                                            {singleNews?.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <LatestNewsSection></LatestNewsSection>
                     {/* Suggested news */}
-                    <div className="mt-5">
-                        <h2 className="text-2xl font-medium capitalize">
-                            Suggested
-                        </h2>
-                        <div className="mt-[10px]">
-                            {news?.slice(0, 3)?.map((singleNews, idx) => (
-                                <div
-                                    key={idx}
-                                    className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
-                                >
-                                    <Image
-                                        width={245}
-                                        height={168}
-                                        alt="image Image"
-                                        className="w-full h-full object-cover rounded-xl"
-                                        src={singleNews?.image}
-                                    />
-
-                                    <div className="col-span-2">
-                                        <p className="text-[#969696] text-sm sm:text-base">
-                                            <FaRegClock className="inline mr-1" />
-                                            {moment(
-                                                singleNews?.timestamp
-                                            ).fromNow()}
-                                        </p>
-                                        <h3 className="font-bold text-sm mt-[10px]">
-                                            <span className="">
-                                                {singleNews?.title.slice(0, 60)}
-                                                ....
-                                            </span>
-                                        </h3>
-                                        <p className="mt-[10px] hidden sm:block md:hidden">
-                                            {singleNews?.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <SuggestedNewsSection></SuggestedNewsSection>
                     {/* Trending news */}
-                    <div className="mt-5">
-                        <h2 className="text-2xl font-medium capitalize">
-                            Trending news
-                        </h2>
-                        <div className="mt-[10px]">
-                            {news?.slice(0, 3)?.map((singleNews, idx) => (
-                                <div
-                                    key={idx}
-                                    className="grid grid-cols-3 mt-[10px] py-[10px] gap-2 sm:gap-5 "
-                                >
-                                    <Image
-                                        width={245}
-                                        height={168}
-                                        alt="image Image"
-                                        className="w-full h-full object-cover rounded-xl"
-                                        src={singleNews?.image}
-                                    />
-
-                                    <div className="col-span-2">
-                                        <p className="text-[#969696] text-sm sm:text-base">
-                                            <FaRegClock className="inline mr-1" />
-                                            {moment(
-                                                singleNews?.timestamp
-                                            ).fromNow()}
-                                        </p>
-                                        <h3 className="font-bold text-sm mt-[10px]">
-                                            <span className="">
-                                                {singleNews?.title.slice(0, 60)}
-                                                ....
-                                            </span>
-                                        </h3>
-                                        <p className="mt-[10px] hidden sm:block md:hidden">
-                                            {singleNews?.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <TrendingNewsSection></TrendingNewsSection>
                 </div>
             </div>
             <div className="bg-[#eeee]  rounded-lg w-full h-52 flex items-center justify-center my-5 overflow-hidden">

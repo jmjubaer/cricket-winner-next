@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -7,7 +7,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import MatchCard from "@/components/MatchCard";
+import MatchCard from "@/components/Card/MatchCard";
 const Match = () => {
     // const match = [
     //     {
@@ -86,14 +86,14 @@ const Match = () => {
     //             "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
     //     },
     // ];
-    const [match,setMatch] = useState([])
+    const [match, setMatch] = useState([]);
     useEffect(() => {
-        (async() => {
-            const res = await fetch('/api/match')
-            const matchData = await res.json()
+        (async () => {
+            const res = await fetch("/api/match");
+            const matchData = await res.json();
             setMatch(matchData);
-        })()
-    },[])
+        })();
+    }, []);
     return (
         <div className="container overflow-hidden mt-5">
             <Tabs>

@@ -10,12 +10,13 @@ import Image from "next/image";
 import WorldCupNews from "./WorldCupNews";
 import LeagueNews from "./LeagueNews";
 import TodayNews from "./TodayNews";
-import MatchCard from "@/components/MatchCard";
+import MatchCard from "@/components/Card/MatchCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import RankTable from "./RankTable";
+import SuggestedMatch from "@/components/SuggestedMatch";
 const MainContent = () => {
     const match = [
         {
@@ -147,18 +148,7 @@ const MainContent = () => {
                 <RankTable></RankTable>
 
                 {/* Suggest match */}
-                <div className="mt-5">
-                    <h2 className="font-medium text-2xl text-[#323232]">
-                        Upcoming match
-                    </h2>
-                    <Swiper slidesPerView={1} className=" mt-5">
-                        {match.map((single, idx) => (
-                            <SwiperSlide key={idx}>
-                                <MatchCard single={single}></MatchCard>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+                <SuggestedMatch></SuggestedMatch>
                 <div
                     className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center  my-5`}
                 >

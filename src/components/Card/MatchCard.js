@@ -34,7 +34,7 @@ const MatchCard = ({ single }) => {
                 </p>
             </div>
             <div className="flex justify-between my-[10px] items-center">
-                <div className="mx-5">
+                <div className="mx-3">
                     <Image
                         width={75}
                         height={75}
@@ -44,7 +44,7 @@ const MatchCard = ({ single }) => {
                     />
                 </div>
                 <p>VS</p>
-                <div className="mx-5">
+                <div className="mx-3">
                     <Image
                         width={75}
                         height={75}
