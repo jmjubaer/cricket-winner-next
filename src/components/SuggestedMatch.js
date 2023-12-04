@@ -20,24 +20,20 @@ const SuggestedMatch = () => {
             <h2 className="font-medium text-2xl mb-[10px]">Upcoming match</h2>
             <Swiper
                 // slidesPerView={1}
-                // breakpoints={{
-                //     540: {
-                //         slidesPerView: 2,
-                //         spaceBetween: 10,
-                //     },
-                //     790: {
-                //         slidesPerView: 3,
-                //         spaceBetween: 20,
-                //     },
-                //     1220: {
-                //         slidesPerView: 4,
-                //         spaceBetween: 20,
-                //     },
-                //     1440: {
-                //         slidesPerView: 5,
-                //         spaceBetween: 30,
-                //     },
-                // }}
+                breakpoints={{
+                    540: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    790: {
+                        slidesPerView: 1,
+                        // spaceBetween: 20,
+                    },
+                    // 1220: {
+                    //     slidesPerView: 4,
+                    //     spaceBetween: 20,
+                    // }
+                }}
                 // spaceBetween={30}
                 // navigation
                 modules={[Autoplay]}

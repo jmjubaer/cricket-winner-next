@@ -52,7 +52,7 @@ const NewsDetailsPage = ({ params }) => {
             <section className="grid md:grid-cols-3 gap-5 container">
                 {/* Left Content */}
                 <div className="md:col-span-2 bg-white p-5 mt-5 rounded-2xl">
-                    <h2 className="text-3xl font-bold mt-5">{title}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold mt-5">{title}</h2>
                     <p className="mt-3">
                         {showFull ? description : description?.slice(0, 150)}
 
@@ -71,7 +71,7 @@ const NewsDetailsPage = ({ params }) => {
                         className="my-5 rounded-xl w-full"
                     />
                     {/* author info */}
-                    <div className="flex justify-between my-5">
+                    <div className="flex flex-col gap-5 sm:gap-0 sm:flex-row justify-between my-5">
                         <div className="flex items-center gap-2">
                             <Image
                                 width={35}
@@ -80,16 +80,25 @@ const NewsDetailsPage = ({ params }) => {
                                 alt="Banner Image"
                                 className="w-9 h-9 rounded-full object-cover"
                             />
-                            <h4 className="text-sm font-medium">
-                                {author?.name}
-                            </h4>
-                            <p>
-                                {moment(timestamp).format(
-                                    " | MMMM M YYYY | HH : mm A"
-                                )}
-                            </p>
+                            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row ">
+                                <h4 className="text-sm font-medium mr-1">
+                                    {author?.name}
+                                </h4>
+                                <p>
+                                    <span className="hidden lg:block">
+                                        {moment(timestamp).format(
+                                            "  MMMM M YYYY | HH : mm A"
+                                        )}
+                                    </span>
+                                    <span className="lg:hidden block">
+                                        {moment(timestamp).format(
+                                            "  MMM M YYYY | HH : mm A"
+                                        )}
+                                    </span>
+                                </p>
+                            </div>
                         </div>
-                        <ul className="flex gap-2">
+                        <ul className="flex justify-evenly gap-2">
                             <li>
                                 <a
                                     href="#"
@@ -131,8 +140,8 @@ const NewsDetailsPage = ({ params }) => {
                     </div>
 
                     <VectorBg rounded={true}>
-                        <div className="p-8 flex items-center justify-between">
-                            <div className="text-white">
+                        <div className="p-8 flex sm:flex-row flex-col gap-5 items-center justify-between">
+                            <div className="text-white text-center sm:text-left">
                                 <h3 className="text-3xl font-extrabold">
                                     Be winner today!
                                 </h3>
@@ -141,7 +150,7 @@ const NewsDetailsPage = ({ params }) => {
                                     community
                                 </p>
                             </div>
-                            <ul className="flex items-center gap-[10px]">
+                            <ul className="flex items-center sm:justify-normal justify-center gap-[10px]">
                                 <li>
                                     <a
                                         href="#"

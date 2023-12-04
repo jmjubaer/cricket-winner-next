@@ -27,7 +27,7 @@ const Footer = () => {
                     </p>
                     {/* Search bar */}
                     <form onSubmit={handleSubscribe} className="bg-[#323232] border rounded-full flex p-[10px] items-center">
-                        <div className="sm:w-full flex gap-2 text-[#969696]">
+                        <div className="w-full flex gap-2 text-[#969696]">
                             <MdEmail className="text-2xl ml-2" />
                             <input
                                 type="email"

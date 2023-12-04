@@ -133,7 +133,7 @@ const MainContent = () => {
             </div>
 
             {/* Right Content */}
-            <div className="hidden lg:col-span-4 lg:flex flex-col justify-between">
+            <div className="hidden lg:col-span-4 lg:flex flex-col justify-between overflow-hidden">
                 {/* <Image src={Board} alt="Ad" className="w-full" /> */}
                 <RankTable></RankTable>
                 <div
