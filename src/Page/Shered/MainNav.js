@@ -62,10 +62,10 @@ const MainNav = () => {
                     <button className="flex items-center justify-center w-11 h-11 text-xl border border-[#F5F5F5] rounded-full ">
                         <FaMagnifyingGlass />
                     </button>
-                    <button className="px-5 p-3 border border-[#F5F5F5] rounded-3xl">
+                    <Link href={"/login"} className="px-5 p-3 border border-[#F5F5F5] rounded-3xl">
                         <FaUser className="inline mr-2" />
                         Login
-                    </button>
+                    </Link>
                     <button className="primary_btn-rounded items-center gap-1 md:flex hidden">
                         <GoArrowUpRight className=" text-3xl" />
                         Be an expert

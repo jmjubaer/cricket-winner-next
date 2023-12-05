@@ -106,7 +106,7 @@ const MainContent = () => {
         },
     ];
     return (
-        <section className="container grid grid-cols-12 gap-5">
+        <section className="container grid grid-cols-12 mb-5 gap-5">
             {/* left content */}
             <div className="col-span-12 lg:col-span-8 bg-white p-5 rounded-xl">
                 {/*======== Mobile content =================*/}
