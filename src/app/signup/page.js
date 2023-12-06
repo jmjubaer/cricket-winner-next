@@ -135,7 +135,7 @@ const SignUpPage = () => {
                             </ul>
                         </div>
                     </VectorBg>
-                    <div className="sm:w-10/12 w-11/12 my-9 mx-auto">
+                    <div className="sm:w-10/12 w-11/12 my-9 mx-auto">   
                         <h2 className="text-5xl font-bold">Create new account</h2>
                         <p className="sm:text-xl mt-5">
                             Welcome back, Enter your credentials to access your

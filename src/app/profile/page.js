@@ -1,7 +1,10 @@
+import moment from "moment";
 import Image from "next/image";
 import React from "react";
 import { FaCamera } from "react-icons/fa";
-
+import { FaHandPeace } from "react-icons/fa6";
+import { SlBadge } from "react-icons/sl";
+import { MdSportsCricket } from "react-icons/md";
 const UserProfilePage = () => {
     const user = {
         image: "https://i.ibb.co/RSg2tMM/my-image.gif",
@@ -84,6 +87,40 @@ const UserProfilePage = () => {
                         </span>{" "}
                         Followers
                     </button>
+                </div>
+                <p className="text-center text-[#969696] mt-5">
+                    Joined:{" "}
+                    <span className="font-medium text-[#323232]">
+                        {moment(joinDate).format("MMM YYYY")}
+                    </span>
+                </p>
+
+                {/* Statistics */}
+                <div className="border-y my-5 py-5">
+                    <h2 className="text-xl font-bold text-[#323232]">Statistics</h2>
+                    <div className=" grid grid-cols-3 gap-3 text-center mt-[10px]">
+                        <div className="text-[#8D38E3]">
+                            <div className="w-16 h-16 rounded-xl bg-[#EBE1FF] flex justify-center items-center border border-[#8D38E3] text-4xl mx-auto">
+                                <SlBadge className=""/>
+                            </div>
+                            <h3 className="font-bold mt-[10px]">Participation</h3>
+                            <span className="text-[32px] font-bold mt-[10px]">{participation}%</span>
+                        </div>
+                        <div className="text-[#1BA2E8]  ">
+                            <div className="w-16 h-16 rounded-xl bg-[#EBE1FF] flex justify-center items-center border border-[#1BA2E8] text-4xl mx-auto">
+                            <FaHandPeace />
+                            </div>
+                            <h3 className="font-bold mt-[10px]">Toss Accuracy</h3>
+                            <span className="text-[32px] font-bold mt-[10px]">{tossaccuracy}%</span>
+                        </div>
+                        <div className="text-[#41D33E] ">
+                            <div className="w-16 h-16 rounded-xl bg-[#EBE1FF] flex justify-center items-center border border-[#41D33E] text-4xl mx-auto">
+                                <MdSportsCricket className=""/>
+                            </div>
+                            <h3 className="font-bold mt-[10px]">Match Accuracy</h3>
+                            <span className="text-[32px] font-bold mt-[10px]">{participation}%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="col-span-2 bg-white"></div>
