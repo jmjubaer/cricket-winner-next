@@ -9,6 +9,17 @@ import { FaUserCheck } from "react-icons/fa6";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { SlBadge } from "react-icons/sl";
 import Select from "react-select";
+import ad from "@/assets/profiles/ad.png";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
+} from "react-accessible-accordion";
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import "react-accessible-accordion/dist/fancy-example.css";
 const LeaderBoardPage = () => {
     const [year, setYear] = useState(null);
     const [league, setLeague] = useState(null);
@@ -293,7 +304,7 @@ const LeaderBoardPage = () => {
                 </div>
             </VectorBg>
             {/* Main content */}
-            <div className="grid grid-cols-3 mt-5 gap-5">
+            <div className="grid lg:grid-cols-4 mt-5 gap-5">
                 {/* Left Content */}
                 <div className="bg-white p-5 rounded-xl">
                     <div className="flex justify-between items-center border-b pb-4">
@@ -305,41 +316,45 @@ const LeaderBoardPage = () => {
                             Clear
                         </button>
                     </div>
-                    <div className="mt-4">
-                        <h4 className="font-medium text-sm">Year</h4>
-                        <Select
-                            value={year}
-                            onChange={setYear}
-                            options={YearOptions}
-                            placeholder={"2023"}
-                            className="mt-1"
-                        />
-                    </div>
-                    <div className="mt-4">
-                        <h4 className="font-medium text-sm">League / Series</h4>
-                        <Select
-                            value={league}
-                            onChange={setLeague}
-                            options={leagueOptions}
-                            className="mt-1"
-                            placeholder={"ICC World Cup"}
-                        />
-                    </div>
-                    <div className="mt-4">
-                        <h4 className="font-medium text-sm">Format</h4>
-                        <Select
-                            value={format}
-                            onChange={setFormat}
-                            options={formatOptions}
-                            placeholder={"T20"}
-                            className="mt-1"
-                        />
+                    <div className="flex lg:flex-col flex-col sm:flex-row mt-4 gap-4">
+                        <div className="w-full">
+                            <h4 className="font-medium text-sm">Year</h4>
+                            <Select
+                                value={year}
+                                onChange={setYear}
+                                options={YearOptions}
+                                placeholder={"2023"}
+                                className="mt-1"
+                            />
+                        </div>
+                        <div className="w-full">
+                            <h4 className="font-medium text-sm">
+                                League / Series
+                            </h4>
+                            <Select
+                                value={league}
+                                onChange={setLeague}
+                                options={leagueOptions}
+                                className="mt-1"
+                                placeholder={"ICC World Cup"}
+                            />
+                        </div>
+                        <div className="w-full">
+                            <h4 className="font-medium text-sm">Format</h4>
+                            <Select
+                                value={format}
+                                onChange={setFormat}
+                                options={formatOptions}
+                                placeholder={"T20"}
+                                className="mt-1"
+                            />
+                        </div>
                     </div>
                 </div>
                 {/* Right Content */}
-                <div className="col-span-2">
+                <div className="lg:col-span-3 rounded-2xl overflow-hidden">
                     <div className="overflow-auto w-full">
-                        <table className=" w-full">
+                        <table className="w-full min-w-[600px]">
                             {/* head */}
                             <thead>
                                 <tr className="font-medium my-3 text-[#969696] bg-[#EAECF0]  text-sm">
@@ -356,19 +371,22 @@ const LeaderBoardPage = () => {
                                         Match
                                     </th>
                                     <th className="font-medium py-3 px-2">
-                                    Participation
+                                        Participation
                                     </th>
                                     <th className="font-medium py-3 px-2">
-                                    Badge
+                                        Badge
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {/*Todo: Change Dynamic data */}
                                 {usersInfo?.slice(0, 10)?.map((user, idx) => (
-                                    <tr key={idx} className="even:bg-[#EAECF0]">
+                                    <tr
+                                        key={idx}
+                                        className="even:bg-[#EAECF0] bg-white"
+                                    >
                                         <th>{idx + 1}</th>
-                                        <td className="py-2">
+                                        <td className="">
                                             <div className="flex justify-between sm:gap-2">
                                                 <div className="flex items-center gap-1">
                                                     <Image
@@ -403,16 +421,126 @@ const LeaderBoardPage = () => {
                                                 height="12px"
                                             />
                                         </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td className="py-4">
+                                            <p
+                                                className={`bg-opacity-10 mx-auto w-fit sm:text-sm text-xs leading-3 border flex justify-center items-center rounded-full text-center py-1 px-[6px] font-medium ${
+                                                    user?.accuracy > 40
+                                                        ? "bg-[#027A48] text-[#027A48]"
+                                                        : user?.accuracy > 30
+                                                        ? "bg-[#FF8B00] text-[#FF8B00]"
+                                                        : "bg-[#E33E38] text-[#E33E38]"
+                                                }`}
+                                            >
+                                                {user?.accuracy}%
+                                            </p>
+                                            <div className="flex mt-[10px] items-center justify-center gap-[5px]">
+                                                <div className="relative w-[33px] h-[33px] bg-[#D8D8D8] flex items-center justify-center rounded-full">
+                                                    <p className="z-10 text-sm font-bold">
+                                                        {user?.win?.toss}
+                                                    </p>
+                                                    <AiFillLike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
+                                                </div>
+                                                <div className="relative w-[33px] h-[33px] bg-[#D8D8D8] flex items-center justify-center rounded-full">
+                                                    <p className="z-10 text-sm font-bold">
+                                                        {user?.loss?.toss}
+                                                    </p>
+                                                    <AiFillDislike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="py-4">
+                                            <p
+                                                className={`bg-opacity-10 mx-auto w-fit sm:text-sm text-xs leading-3 border flex justify-center items-center rounded-full text-center py-1 px-[6px] font-medium ${
+                                                    user?.accuracy > 40
+                                                        ? "bg-[#027A48] text-[#027A48]"
+                                                        : user?.accuracy > 30
+                                                        ? "bg-[#FF8B00] text-[#FF8B00]"
+                                                        : "bg-[#E33E38] text-[#E33E38]"
+                                                }`}
+                                            >
+                                                {user?.accuracy}%
+                                            </p>
+                                            <div className="flex items-center justify-center gap-[5px] mt-[10px]">
+                                                <div className="relative w-[33px] h-[33px] bg-[#D8D8D8] flex items-center justify-center rounded-full">
+                                                    <p className="z-10 text-sm font-bold">
+                                                        {user?.win?.match}
+                                                    </p>
+                                                    <AiFillLike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
+                                                </div>
+                                                <div className="relative w-[33px] h-[33px] bg-[#D8D8D8] flex items-center justify-center rounded-full">
+                                                    <p className="z-10 text-sm font-bold">
+                                                        {user?.loss?.match}
+                                                    </p>
+                                                    <AiFillDislike className="absolute -top-1 -right-1 bg-[#D8D8D8] p-1 text-xl rounded-full" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p className="text-center text-sm font-medium">
+                                                {parseInt(
+                                                    (user?.participation *
+                                                        100) /
+                                                        56
+                                                )}
+                                                %
+                                            </p>
+                                            <p className="py-0.5 px-1.5 w-fit bg-[#323232] rounded-full text-white mx-auto text-sm mt-2 font-bold">
+                                                {user?.participation}/56
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div className="relative mx-auto w-[38px] h-[38px] bg-[#FF8B00] flex items-center text-white justify-center rounded-full">
+                                                <p className="z-10 text-sm font-bold">
+                                                    {user?.badge}
+                                                </p>
+                                                <SlBadge className="absolute -top-1 -right-1 bg-[#FF8B00] p-1 text-xl rounded-full" />
+                                            </div>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-[10px] my-5">
+                <Image src={ad} alt="sponsor image " />
+                <Image src={ad} alt="sponsor image " />
+            </div>
+            <div className="">
+                <Accordion>
+                    <AccordionItem>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                                What harsh truths do you prefer to ignore?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                Exercitation in fugiat est ut ad ea cupidatat ut
+                                in cupidatat occaecat ut occaecat consequat est
+                                minim minim esse tempor laborum consequat esse
+                                adipisicing eu reprehenderit enim.
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                                Is free will real or just an illusion?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                In ad velit in ex nostrud dolore cupidatat
+                                consectetur ea in ut nostrud velit in irure
+                                cillum tempor laboris sed adipisicing eu esse
+                                duis nulla non.
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                </Accordion>
             </div>
         </section>
     );
