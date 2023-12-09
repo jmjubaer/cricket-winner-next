@@ -144,3 +144,22 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("../assets/Authentication/cover_image.jpg");
     background-size: cover;
 }
+
+/* Leader board accordion */
+.accordion__button{
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding-right: 30px !important;
+}
+.accordion__heading{
+    position: relative;
+}
+.accordion__button:before {
+    top: 40% !important;
+    position: absolute;
+    right: 5px;
+}
+.accordion__panel{
+    padding: 10px !important;
+
+}

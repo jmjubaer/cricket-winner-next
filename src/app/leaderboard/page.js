@@ -509,34 +509,124 @@ const LeaderBoardPage = () => {
                 <Image src={ad} alt="sponsor image " />
             </div>
             <div className="">
-                <Accordion>
-                    <AccordionItem>
+                <h2 className="text-center text-3xl">
+                    Frequently asked questions
+                </h2>
+                <p className="text-center mt-[10px]">
+                    Everything you need to know about the Cricketwinner.
+                </p>
+                <Accordion className="my-10 md:w-4/5 mx-auto overflow-hidden rounded-xl" preExpanded={["a"]}>
+                    <AccordionItem uuid="a">
                         <AccordionItemHeading>
                             <AccordionItemButton>
-                                What harsh truths do you prefer to ignore?
+                                Is there a free trial available?
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                             <p>
-                                Exercitation in fugiat est ut ad ea cupidatat ut
-                                in cupidatat occaecat ut occaecat consequat est
-                                minim minim esse tempor laborum consequat esse
-                                adipisicing eu reprehenderit enim.
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
                             </p>
                         </AccordionItemPanel>
                     </AccordionItem>
-                    <AccordionItem>
+                    <AccordionItem uuid="b">
                         <AccordionItemHeading>
                             <AccordionItemButton>
-                                Is free will real or just an illusion?
+                            Can I change my plan later?
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                             <p>
-                                In ad velit in ex nostrud dolore cupidatat
-                                consectetur ea in ut nostrud velit in irure
-                                cillum tempor laboris sed adipisicing eu esse
-                                duis nulla non.
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem uuid="c">
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                            What is your cancellation policy?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem uuid="d">
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                            Can other info be added to an invoice?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem uuid="e">
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                            How does billing work?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem uuid="f">
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                            How do I change my account email?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia id impedit earum
+                                cupiditate? Eum aliquid minus sed. Similique ab
+                                saepe at amet ratione? Aspernatur quas corrupti
+                                facilis suscipit esse quidem dolore consectetur
+                                excepturi facere assumenda, nisi praesentium
+                                harum nesciunt reprehenderit non eum quos saepe
+                                vero neque quaerat aliquid vel. Soluta!
                             </p>
                         </AccordionItemPanel>
                     </AccordionItem>
