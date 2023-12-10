@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FaRegClock } from "react-icons/fa6";
 import moment from "moment";
 import VerticalNewsCard from "@/components/Card/VerticalNewsCard";
+import Link from "next/link";
 
 const NewsSection = () => {
     const [news, setNews] = useState([]);
@@ -64,9 +65,9 @@ const NewsSection = () => {
                                                 ).fromNow()}
                                             </p>
                                         </div>
-                                        <p className="font-bold sm:text-xl sm:mt-3 text-white">
+                                        <Link href={`/news/${news?.id}`} className="font-bold sm:text-xl sm:mt-3 text-white">
                                             {news?.title}
-                                        </p>
+                                        </Link>
                                     </div>
                                 </div>
                             </SwiperSlide>

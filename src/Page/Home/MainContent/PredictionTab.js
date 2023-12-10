@@ -1,6 +1,7 @@
+import NewsCardLarge from "@/components/Card/NewsCardLarge";
 import moment from "moment";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegClock } from "react-icons/fa6";
 
 const PredictionTab = () => {
@@ -57,40 +58,16 @@ const PredictionTab = () => {
                 "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
         },
     ];
-    const predictionCollection = [
-        {
-            country: "England",
-            image: "https://i.ibb.co/xz9njP6/image-6.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Waqar Younis praises Virat Kohli as a 'crazy man' who will shatter records beyond imagination.",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/QK5wY3T/image-9.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Cricket Australia ICC World Cup 2023 Squad Announced",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
-            description: "",
-        },
-    ];
+    const [news, setNews] = useState([]);
+    useEffect(() => {
+        (async () => {
+            // News data fetch ===
+            const newsRes = await fetch("/api/news");
+            const news = await newsRes.json();
+            console.log(news);
+            setNews(news);
+        })();
+    }, []);
     return (
         <div>
             {/*========================= top Card ======================*/}
@@ -110,7 +87,6 @@ const PredictionTab = () => {
 
                         {/* Overlay */}
                         <div className="absolute w-full h-full top-0 left-0 from-[#000] sm:to-transparent sm:to-60% bg-gradient-to-t"></div>
-
 
                         <div className="absolute bottom-7 left-0 text-center w-full text-white">
                             <h3 className="text-xl font-medium">
@@ -135,26 +111,11 @@ const PredictionTab = () => {
                     Latest Prediction
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-3 gap-y-5 mt-5">
-                    {predictionCollection.map((prediction, idx) => (
-                        <div key={idx} className="">
-                            <Image
-                                width={245}
-                                height={168}
-                                alt="image Image"
-                                className="w-full h-[240px] object-cover rounded-xl"
-                                src={prediction?.image}
-                            />
-
-                            <div className="mt-[10px]">
-                                <p className="text-[#969696]">
-                                    <FaRegClock className="inline mr-2" />
-                                    {moment(prediction?.timestamp).fromNow()}
-                                </p>
-                                <h3 className="font-bold mt-[10px]">
-                                    {prediction?.title}
-                                </h3>
-                            </div>
-                        </div>
+                    {news.map((singleNews, idx) => (
+                        <NewsCardLarge
+                            key={idx}
+                            singleNews={singleNews}
+                        ></NewsCardLarge>
                     ))}
                 </div>
             </div>
@@ -165,26 +126,11 @@ const PredictionTab = () => {
                     IPL Prediction
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-3 gap-y-5 mt-5">
-                    {predictionCollection.slice(1, 3).map((prediction, idx) => (
-                        <div key={idx} className="">
-                            <Image
-                                width={245}
-                                height={168}
-                                alt="image Image"
-                                className="w-full h-[240px] object-cover rounded-xl"
-                                src={prediction?.image}
-                            />
-
-                            <div className="mt-[10px]">
-                                <p className="text-[#969696]">
-                                    <FaRegClock className="inline mr-2" />
-                                    {moment(prediction?.timestamp).fromNow()}
-                                </p>
-                                <h3 className="font-bold mt-[10px]">
-                                    {prediction?.title}
-                                </h3>
-                            </div>
-                        </div>
+                    {news?.slice(1,3)?.map((singleNews, idx) => (
+                        <NewsCardLarge
+                            key={idx}
+                            singleNews={singleNews}
+                        ></NewsCardLarge>
                     ))}
                 </div>
             </div>

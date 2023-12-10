@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 // Import Swiper styles
@@ -7,42 +8,27 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { FaRegClock } from "react-icons/fa6";
 import moment from "moment";
+import Link from "next/link";
 const TrendingNews = () => {
-    const newsCollection = [
-        {
-            country: "England",
-            image: "https://i.ibb.co/xz9njP6/image-6.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Waqar Younis praises Virat Kohli as a 'crazy man' who will shatter records beyond imagination.",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/QK5wY3T/image-9.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "Cricket Australia ICC World Cup 2023 Squad Announced",
-            description: "",
-        },
-        {
-            country: "Australia",
-            image: "https://i.ibb.co/cTVk71K/Frame-417.png",
-            timestamp:
-                "Sun Nov 19 2023 02:30:00 GMT+0600 (Bangladesh Standard Time)",
-            title: "New Zealand cricket team: Strength And Weakness Of Kane Williamson",
-            description: "",
-        },
-    ];
+    const [newsCollection, setNewsCollection] = useState([]);
+    useEffect(() => {
+        (async () => {
+            // News data fetch ===
+            const newsRes = await fetch("/api/news");
+            const news = await newsRes.json();
+            // console.log(news);
+            setNewsCollection(news);
+        })();
+    }, []);
     return (
         <div className="grid sm:grid-cols-3 container">
-            {/* Slider area */} 
+            {/* Slider area */}
             <div className="sm:col-span-3 lg:col-span-2 mt-5 hidden sm:block">
                 <h2 className="text-2xl font-medium my-2">Featured News</h2>
                 <Swiper
                     autoplay={{
                         delay: 2500,
-                        disableOnInteraction: false
+                        disableOnInteraction: false,
                     }}
                     pagination={true}
                     modules={[Pagination, Autoplay]}
@@ -74,9 +60,12 @@ const TrendingNews = () => {
                                             {moment(news?.timestamp).fromNow()}
                                         </p>
                                     </div>
-                                    <p className="font-bold text-xl mt-3 text-white">
+                                    <Link
+                                        href={`/news/${news?.id}`}
+                                        className="font-bold text-xl mt-3 text-white"
+                                    >
                                         {news?.title}
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -86,7 +75,7 @@ const TrendingNews = () => {
 
             <div className="mt-5 col-span-3 lg:col-span-1">
                 <h2 className="text-2xl font-medium my-2">Featured News</h2>
-                {newsCollection?.map((news,idx) => (
+                {newsCollection?.map((news, idx) => (
                     <div key={idx} className="flex gap-2 p-3">
                         <Image
                             width={250}
@@ -100,7 +89,9 @@ const TrendingNews = () => {
                                 <FaRegClock className="inline mr-2" />
                                 {moment(news?.timestamp).fromNow()}
                             </p>
-                            <p className="font-bold text-sm mt-1">{news?.title}</p>
+                            <p className="font-bold text-sm mt-1">
+                                {news?.title}
+                            </p>
                         </div>
                     </div>
                 ))}

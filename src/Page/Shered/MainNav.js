@@ -36,7 +36,7 @@ const MainNav = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link className="link" href={"/"}>
+                            <Link className="link" href={"/news"}>
                                 News
                             </Link>
                         </li>
