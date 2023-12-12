@@ -12,7 +12,7 @@ const NewsCardSmall = ({ singleNews }) => {
                 width={245}
                 height={168}
                 alt="image Image"
-                className="w-full h-full object-cover rounded-xl"
+                className="md:w-full h-full object-cover rounded-xl"
                 src={image}
             />
 

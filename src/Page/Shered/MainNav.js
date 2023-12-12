@@ -51,6 +51,11 @@ const MainNav = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link className="link" href={"/leaderboard"}>
+                                Leader Board
+                            </Link>
+                        </li>
+                        <li>
                             <button className="primary_btn-rounded items-center gap-1 md:hidden flex text-black mt-5">
                                 <GoArrowUpRight className=" text-3xl" />
                                 Be an expert
