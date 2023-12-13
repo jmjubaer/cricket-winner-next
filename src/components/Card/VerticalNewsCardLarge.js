@@ -7,7 +7,7 @@ const VerticalNewsCardLarge = ({ news }) => {
     const { id, image, timestamp, title, description } = news || {};
 
     return (
-        <div className="grid grid-cols-2 mt-[10px] py-[10px] gap-2 sm:gap-5 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 mt-[10px] py-[10px] gap-2 sm:gap-5 ">
             <Image
                 width={245}
                 height={168}

@@ -9,10 +9,10 @@ const VerticalNewsCard = ({ news }) => {
     return (
         <div className="p-3 mx-auto">
             <Image
-                width={250}
-                height={150}
+                width={350}
+                height={200}
                 alt="news Image"
-                className="w-full sm:h-[147px] object-cover object-top rounded-xl"
+                className="w-full sm:h-[200px] object-cover object-top rounded-xl"
                 src={image}
             />
             <p className="text-[#969696] my-3">

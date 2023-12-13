@@ -9,10 +9,10 @@ const NewsCardLarge = ({ singleNews }) => {
     return (
         <div className="">
             <Image
-                width={245}
-                height={168}
+                width={350}
+                height={240}
                 alt="image Image"
-                className="md:w-full h-[240px] object-cover rounded-xl"
+                className="w-full h-[240px] object-cover rounded-xl"
                 src={image}
             />
 

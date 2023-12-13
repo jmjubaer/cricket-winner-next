@@ -34,7 +34,7 @@ const NewsPage = () => {
         <>
             <div className="container grid grid-cols-3 gap-5 py-5">
                 {/* Left content */}
-                <div className="bg-white rounded-[20px] col-span-3 lg:col-span-2 p-5">
+                <div className="bg-white rounded-[20px] col-span-3 md:col-span-2 p-5">
                     <h2 className="text-3xl font-bold">Cricket News</h2>
                     {/* Todo: change the demy text */}
                     <p className="mt-[10px]">
@@ -48,7 +48,7 @@ const NewsPage = () => {
                             {showFull ? "Show less" : "Read more"}
                         </button>
                     </p>
-                    <div className="grid sm:grid-cols-2 gap-3 gap-y-5 my-5">
+                    <div className="grid lg:grid-cols-2 gap-3 gap-y-5 my-5">
                         {news.map((singleNews, idx) => (
                             <NewsCardLarge
                                 key={idx}
@@ -57,13 +57,13 @@ const NewsPage = () => {
                         ))}
                     </div>
                     {/* Ad Script here */}
-                    {/* <div
+                    <div
                         className={`bg-[#eeee]  rounded-lg w-full h-[120px] flex items-center justify-center my-5`}
                     >
                         <p className="text-5xl text-black text-opacity-10">
                             Ad Here
                         </p>
-                    </div> */}
+                    </div>
 
                     {/* Vertical news card */}
                     {/* Todo: Change data */}
@@ -77,13 +77,13 @@ const NewsPage = () => {
                     </div>
 
                     {/* Ad Script here */}
-                    {/* <div
+                    <div
                         className={`bg-[#eeee]  rounded-lg w-full h-[120px] flex items-center justify-center my-5`}
                     >
                         <p className="text-5xl text-black text-opacity-10">
                             Ad Here
                         </p>
-                    </div> */}
+                    </div>
 
                     {/* Latest news section */}
                     {/* Todo: Change data */}
@@ -98,8 +98,12 @@ const NewsPage = () => {
                                     slidesPerView: 2,
                                     spaceBetween: 0,
                                 },
-                                1220: {
-                                    slidesPerView: 3,
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 0,
+                                },
+                                1024: {
+                                    slidesPerView: 2,
                                     spaceBetween: 0,
                                 },
                             }}
@@ -134,50 +138,51 @@ const NewsPage = () => {
                         </div>
                     </div>
                 </div>
+                
                 {/* Right content */}
-                <div className="overflow-hidden">
+                <div className="overflow-hidden col-span-3 md:col-span-1">
                     {/* Suggested Match */}
-                    {/* <SuggestedMatch></SuggestedMatch> */}
+                    <SuggestedMatch></SuggestedMatch>
                     {/* Latest News */}
                     <LatestNewsSection></LatestNewsSection>
 
                     {/* Ad Script here */}
-                    {/* <div
+                    <div
                         className={`bg-[#eeee]  rounded-lg w-full h-[490px] flex items-center justify-center my-5`}
                     >
                         <p className="text-5xl text-black text-opacity-10">
                             Ad Here
                         </p>
-                    </div> */}
+                    </div>
                     {/* Trending News */}
                     <TrendingNewsSection></TrendingNewsSection>
 
                     {/* Ad Script here */}
-                    {/* <div
+                    <div
                         className={`bg-[#eeee]  rounded-lg w-full h-[250px] flex items-center justify-center my-5`}
                     >
                         <p className="text-5xl text-black text-opacity-10">
                             Ad Here
                         </p>
-                    </div> */}
+                    </div>
                     {/* Suggested News */}
                     <SuggestedNewsSection></SuggestedNewsSection>
                     {/* Ad Script here */}
-                    {/* <div
+                    <div
                         className={`bg-[#eeee]  rounded-lg w-full h-[490px] flex items-center justify-center my-5`}
                     >
                         <p className="text-5xl text-black text-opacity-10">
                             Ad Here
                         </p>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             {/* Ad Script here */}
-            {/* <div
-                className={`bg-[#eeee] rounded-lg w-full h-[190px] flex items-center justify-center my-5`}
+            <div
+                className={`bg-[#eeee] rounded-lg w-full h-[190px] items-center justify-center my-5 hidden md:flex`}
             >
                 <p className="text-5xl text-black text-opacity-10">Ad Here</p>
-            </div> */}
+            </div>
         </>
     );
 };

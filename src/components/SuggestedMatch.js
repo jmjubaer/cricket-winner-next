@@ -25,7 +25,7 @@ const SuggestedMatch = () => {
                         slidesPerView: 2,
                         spaceBetween: 10,
                     },
-                    790: {
+                    768: {
                         slidesPerView: 1,
                         // spaceBetween: 20,
                     },
