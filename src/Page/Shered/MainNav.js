@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaBars, FaMagnifyingGlass, FaUser } from "react-icons/fa6";
 import { GoArrowUpRight } from "react-icons/go";
 import { FaTimes } from "react-icons/fa";
+import NavLink from "@/components/NavLink";
 const MainNav = () => {
     const [control, setControl] = useState(false);
     // console.log(control);
@@ -31,29 +32,29 @@ const MainNav = () => {
                         className={`flex-col flex md:flex-row text-[#969696] md:items-center gap-y-3 z-50`}
                     >
                         <li>
-                            <Link className="active link" href={"/"}>
+                            <NavLink exact={true} activeClassName={"active"} className="link" href={"/"}>
                                 Home
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link className="link" href={"/news"}>
+                            <NavLink  activeClassName={"active"} className="link" href={"/news"}>
                                 News
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link className="link" href={"/"}>
+                            <NavLink  activeClassName={"active"} className="link" href={"/prediction"}>
                                 Match Prediction
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link className="link" href={"/"}>
+                            <NavLink  activeClassName={"active"} className="link" href={"/fantasyTips"}>
                                 Fantasy tips
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link className="link" href={"/leaderboard"}>
+                            <NavLink  activeClassName={"active"} className="link" href={"/leaderboard"}>
                                 Leader Board
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
                             <button className="primary_btn-rounded items-center gap-1 md:hidden flex text-black mt-5">
