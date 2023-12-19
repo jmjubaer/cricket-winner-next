@@ -120,15 +120,17 @@ const MainContent = () => {
                 <LeagueNews></LeagueNews>
                 <TodayNews></TodayNews>
 
-                <div className="w-full block lg:hidden my-5">
-                    <RankTable></RankTable>
-                </div>
+                {/*======== Mobile content =================*/}
+
                 <div
-                    className={`bg-[#eeee]  rounded-lg w-full h-full flex items-center justify-center my-5 lg:hidden`}
+                    className={`bg-[#eeee]  rounded-lg w-full h-48 flex items-center justify-center my-5 lg:hidden`}
                 >
                     <p className="text-5xl text-black text-opacity-10">
                         Ad Here
                     </p>
+                </div>
+                <div className="w-full block lg:hidden my-5">
+                    <RankTable></RankTable>
                 </div>
             </div>
 

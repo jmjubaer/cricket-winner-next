@@ -130,10 +130,10 @@ const NewsPage = () => {
                         </h2>
                         <div className="">
                             {news?.slice(0, 3)?.map((singleNews) => (
-                                <VerticalNewsCardLarge
+                                <VerticalN  ewsCardLarge
                                     key={singleNews?.id}
                                     news={singleNews}
-                                ></VerticalNewsCardLarge>
+                                ></VerticalN>
                             ))}
                         </div>
                     </div>
