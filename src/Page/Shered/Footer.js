@@ -25,15 +25,16 @@ const Footer = () => {
                     <p className="my-3 text-[#D8D8D8]">
                         Subscribe to stay in the loop with our newest news
                     </p>
+                    {/* Search bar */}
                     <form onSubmit={handleSubscribe} className="bg-[#323232] border rounded-full flex p-[10px] items-center">
                         <div className="w-full flex gap-2 text-[#969696]">
-                            <MdEmail className="text-2xl" />
+                            <MdEmail className="text-2xl ml-2" />
                             <input
                                 type="email"
                                 name="email"
                                 id="email"
                                 placeholder="Email address"
-                                className="bg-transparent placeholder:text-[#969696] outline-none"
+                                className="bg-transparent placeholder:text-[#969696] outline-none w-full"
                             />
                         </div>
                         <button
@@ -43,6 +44,7 @@ const Footer = () => {
                             Subscribe
                         </button>
                     </form>
+
                     <ul className="flex gap-2 mt-8">
                         <li>
                             <a href="#" className="w-12 h-12 flex items-center justify-center bg-[#323232] rounded-full text-xl">

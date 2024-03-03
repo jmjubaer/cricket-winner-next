@@ -5,11 +5,11 @@
 /*================= Common CSS=============== */
 
 .container{
-    @apply w-[1136px] mx-auto max-w-[96%] overflow-hidden
+    @apply w-[1136px] mx-auto max-w-[96%]
 }
 
 .primary_btn{
-    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium hover:bg-[#323232] text-[#646464] hover:text-white 
+    @apply px-5 py-[10px] bg-[#FFC305] rounded-md font-medium hover:bg-[#323232] text-[#323232] hover:text-white cursor-pointer
 }
 .primary_btn-rounded{
     @apply px-5 py-[10px] bg-[#FFC305] rounded-3xl font-medium
@@ -22,8 +22,13 @@
     @apply py-5 block px-[10px] hover:text-[#323232] hover:border-b-2 transition-all duration-100 hover:border-[#FFC305] hover:font-bold
 }
 
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
 
-/* Match section */
+
+}
 
 .swiper-button-prev, .swiper-button-next {
     align-items: center !important;
@@ -33,6 +38,15 @@
     height: 44px !important;
     border-radius: 50% !important;
 }
+@media screen and (max-width: 400px) {
+    .swiper-button-prev, .swiper-button-next {
+        width: 34px !important;
+        height: 34px !important;
+    }
+}
+
+/*=============== Match section ===============*/
+
 .match_tab .react-tabs__tab--selected {
     background: transparent !important;
     border-color: #FFC305 !important;
@@ -47,14 +61,6 @@
     top: -40px !important;
 }
 
-.swiper-button-prev::after, .swiper-button-next::after {
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    padding: 10px 20px !important;
-
-
-}
-
 .matchSwiper .swiper-button-prev{
     right: 300px !important;
     left: auto !important;
@@ -64,6 +70,11 @@
     left: auto !important;
 }
 
+@media screen and (max-width: 740px) {
+    .matchSwiper .swiper-button-prev, .matchSwiper .swiper-button-next {
+        display: none !important;
+    }
+}
 
 /*================== News slider ==================*/
 
@@ -74,15 +85,25 @@
     top: -35px !important;
 }
 .newsSlider .swiper-button-prev{
-    right: 80px !important;
+    right: 70px !important;
     left: auto !important;
 }
 .newsSlider .swiper-button-next{
-    right: 20px !important;
+    right: 10px !important;
     left: auto !important;
 }
 
+@media screen and (max-width: 400px) {
+    .newsSlider .swiper-button-prev{
+        right: 50px !important;
+    }
+    .newsSlider .swiper-button-prev, .newsSlider .swiper-button-next {
+        top: -25px !important;
+    }
+}
+
 /* =============Slider Css==================== */
+
 .swiper-pagination-bullet{
     background: #D9D9D9 !important;
 }
@@ -93,6 +114,52 @@
 }
 
 /* =====================Main content ===================== */
-.content_tab .react-tabs__tab--selected,.content_tab .react-tabs__tab:hover {
+.rounded_left{
+    border-bottom-left-radius: 500px !important;
+    border-top-left-radius: 500px !important;
+}
+.rounded_right{
+    border-bottom-right-radius: 500px !important;
+    border-top-right-radius: 500px !important;
+}
+.content_tab .react-tabs__tab--selected{
     @apply bg-[#FFC305] rounded-none
+}
+.content_tab>:hover {
+    @apply bg-[#FFC305] rounded-none
+}
+
+
+.customClass{
+    background: #14A1FE;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.customClass > div{
+    border-radius: 0px !important;
+}
+
+/* Login Page */
+.bg_image{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url("../assets/Authentication/cover_image.jpg");
+    background-size: cover;
+}
+
+/* Leader board accordion */
+.accordion__button{
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding-right: 30px !important;
+}
+.accordion__heading{
+    position: relative;
+}
+.accordion__button:before {
+    top: 40% !important;
+    position: absolute;
+    right: 5px;
+}
+.accordion__panel{
+    padding: 10px !important;
+
 }
